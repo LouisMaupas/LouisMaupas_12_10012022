@@ -5,8 +5,8 @@ import {
   Route
 } from "react-router-dom";
 import App from "./App";
-import Expenses from "./routes/expenses";
-import Invoices from "./routes/invoices";
+import Expenses from "../src/components/expenses";
+import Invoices from "../src/components/invoices";
 
 const rootElement = document.getElementById("root");
 render(
