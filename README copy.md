@@ -17,7 +17,7 @@ desktop only
 Pour la gestion des calls en eux-mêmes, je t’invite à utiliser soit Fetch, soit Axios.
 <a href='https://github.com/axios/axios'>axios</a>
 <br/>
-commences le projet avec des données que tu auras mockées. Dès que ton projet sera fonctionnel, tu pourras t’attaquer à l’intégration de l’API.
+il est important que tu réalises les calls en dehors des composants React. Il faudra que tu crées un service à part qui se chargera de faire les calls pour toi et commences le projet avec des données que tu auras mockées. Dès que ton projet sera fonctionnel, tu pourras t’attaquer à l’intégration de l’API.
 <br/>
 L’ensemble de ta documentation doit être réalisée en anglais.
 Le fichier README ne doit comporter que les étapes d’installation ainsi que les prérequis du projet. Dans ce fichier, tu devras dire comment installer et lancer le projet.
