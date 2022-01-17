@@ -1,12 +1,18 @@
-// import style from "./style.css"
+import styled from "styled-components"
 
+// styled-component
+const CardLabel = styled.div`
+  background: red;
+`
+
+// Component
 function Card({image, value, type}) {
   return (
-      <div>
+      <CardLabel>
           <img></img>
           <div> {value} </div>
           <div> {type} </div>
-      </div>
+      </CardLabel>
   )
 }
 
