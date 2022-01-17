@@ -1,11 +1,15 @@
-import Header from "./components/Header/index"
+import Header from "./components/Header"
+import SideMenu from "./components/SideMenu"
 
 
 export default function App() {
   return (
     <div>
       <Header></Header>
-      <h1>App.js</h1>
+      <div>
+        <SideMenu></SideMenu>
+        <div></div>
+      </div>
     </div>
   );
 }
