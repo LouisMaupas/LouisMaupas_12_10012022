@@ -5,12 +5,15 @@ import React, { useState, useEffect } from 'react';
 import Welcome from "../components/Welcome";
 import data from "../backend/data_mocked";
 
+// Ext
+import axios from "axios"
+
 
 
 // Component
 function Home() {
 
-    // Call API
+    // Call API with fetch => 
     useEffect(() => {
         fetch(data)
             .then((response) => response.json()
