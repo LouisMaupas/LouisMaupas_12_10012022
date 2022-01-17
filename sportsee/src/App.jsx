@@ -1,6 +1,6 @@
 import Header from "./components/Header"
+import Home from "./pages/home"
 import SideMenu from "./components/SideMenu"
-import Welcome from "./components/Welcome";
 import index from "./index.css"
 
 
@@ -11,9 +11,7 @@ export default function App() {
       <Header></Header>
       <div className="d-flex">
         <SideMenu></SideMenu>
-        <div>
-          <Welcome></Welcome>
-        </div>
+        <Home></Home>
       </div>
     </div>
   );
