@@ -5,7 +5,7 @@ export default function App() {
   return (
     <div>
       <Header></Header>
-      <h1>Titre !</h1>
+      <h1>App.js</h1>
     </div>
   );
 }
