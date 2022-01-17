@@ -1,0 +1,7 @@
+.side-menu {
+    background-color: black;
+}
+
+.copyright {
+    transform: rotate(-90deg);
+}
