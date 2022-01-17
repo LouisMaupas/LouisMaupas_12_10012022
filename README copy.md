@@ -33,6 +33,7 @@ Dernier point, la JsDoc. En dehors des méthodes de cycle de vie (componentDidMo
         <li> Create React App </li>
         <li> React class functions</li>
         <li> React Router V6</li>
+        <li> PropTypes</li>
         <li> Sass </li>
         <li> JSDOC </li>
         <li>Model <a href="https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=0%3A1" target="_blank">figma</a></li>
