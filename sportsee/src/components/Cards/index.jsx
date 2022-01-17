@@ -17,4 +17,10 @@ Card.propTypes = {
   type: PropTypes.string,
 }
 
+Card.defaultProps = {
+  image: 'https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg',
+  value: 999,
+  type: 'Macro-nutriment',
+}
+
 export default Card
