@@ -6,14 +6,14 @@ import Welcome from "../components/Welcome";
 import data from "../backend/data_mocked";
 
 // Ext
-import axios from "axios"
+// import axios from "axios"
 
 
 
 // Component
 function Home() {
 
-    // Call API with fetch => 
+    // Call API with fetch => https://github.com/axios/axios
     useEffect(() => {
         fetch(data)
             .then((response) => response.json()
