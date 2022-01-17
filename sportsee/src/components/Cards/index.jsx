@@ -1,6 +1,6 @@
 // import style from "./style.css"
 
-export default function Card({image, value, type}) {
+function Card({image, value, type}) {
   return (
       <div>
           <img></img>
@@ -9,3 +9,12 @@ export default function Card({image, value, type}) {
       </div>
   )
 }
+
+// Proptypes https://fr.reactjs.org/docs/typechecking-with-proptypes.html#proptypes
+Card.propTypes = {
+  image: PropTypes.string,
+  value: PropTypes.number,
+  type: PropTypes.string,
+}
+
+export default Card
