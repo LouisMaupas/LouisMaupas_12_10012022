@@ -41,12 +41,14 @@ code {
   justify-content: space-evenly;
 }
 
-// Text
 .text-center {
   text-align: center;
 }
 
-// Spacing
+.text-white {
+  color: white;
+}
+
 .mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;

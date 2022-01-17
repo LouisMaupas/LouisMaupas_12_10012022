@@ -1,4 +1,4 @@
-ul {
+header ul {
     display: flex;             
     padding:0;               
     background-color: black; 
@@ -6,7 +6,7 @@ ul {
     color: white;
 }
 
-ul li {
+header ul li {
     list-style-type: none ;
     display: block;
 }
