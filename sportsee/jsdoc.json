@@ -1,0 +1,14 @@
+{
+    "source": {
+        "include": ["src"],
+        "excludePattern": "(nodes_modules/|docs)"
+    },
+    "templates": {
+        "cleverLinks": true,
+        "monospaceLinks": true
+    },
+    "opts": {
+        "recurse": true,
+        "destination": "./docs/"
+    }
+}
