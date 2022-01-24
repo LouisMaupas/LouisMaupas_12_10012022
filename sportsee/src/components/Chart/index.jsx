@@ -8,7 +8,9 @@ const ChartLabel = styled.div`
   border-radius: 5px;
 `
 
-function Chart() {
+function Chart(type, data) {
+
+
     return (
         <ChartLabel>
         </ChartLabel>
