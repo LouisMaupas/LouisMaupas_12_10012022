@@ -1,5 +1,13 @@
+// React
 import { Link } from "react-router-dom";
+
+// app
+import Profil from "../profil/profil"
+
+// stylesheet
 import style from "./style.css"
+
+// img
 import logo from "../../img/logo.svg"
 
 
@@ -11,7 +19,10 @@ export default function Header() {
         <ul>
           <img src={logo} ></img>
           <li><Link to="/">Accueil</Link></li>
-          <li>Profil</li>
+          <li>
+            Profil
+            <Profil profils={['profil', 'profil2']} ></Profil>
+          </li>
           <li>Réglage</li>
           <li>Communauté</li>
         </ul>
