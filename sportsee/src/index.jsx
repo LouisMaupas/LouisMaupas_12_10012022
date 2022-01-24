@@ -8,11 +8,11 @@ import {
 
 // App
 import App from "./App";
-import {UserData} from "./utils/context/index";
+import DataUsers from "./utils/context/index";
 
 const rootElement = document.getElementById("root");
 render(
-  // <UserData>
+  <DataUsers>
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<App/>} />
@@ -27,6 +27,6 @@ render(
         />
       </Routes>
     </BrowserRouter>,
-  // </UserData>,
+  </DataUsers>,
   rootElement
 );

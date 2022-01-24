@@ -1,21 +1,19 @@
-import { createContext, useContext } from "react";
+import data from "../../backend/data_mocked"
+import React from 'react';
 
 
-export const Context = createContext()
+//    const value = {
+//         id,
+//         userInfos,
+//         score,
+//         keyData
+//      } = value
 
-export const UserData = ({ id }) => {
- 
-    // const value = useContext()
-    // const value = {
-    //     id,
-    //     userInfos,
-    //     score,
-    //     keyData
-    // } = value
+const usersData = React.createContext(data)
 
+
+export default function DataUsers() {
     return (
-        <Context.Provider value={{ id }}>
-            {id}
-        </Context.Provider>
+        usersData
     )
-}
+  }
