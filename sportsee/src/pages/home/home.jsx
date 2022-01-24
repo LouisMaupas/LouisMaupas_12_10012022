@@ -9,6 +9,7 @@ import Welcome from "../../components/Welcome";
 import data from "../../backend/data_mocked";
 import DailyMotivation from '../../components/DailyMotivation';
 import Card from "../../components/Cards/index"
+import DailyActivity from '../../components/DailyActivity';
 
 // Component
 function Home() {
@@ -84,7 +85,9 @@ function Home() {
           <DailyMotivation></DailyMotivation>
         </div>
         <div>
-            <div></div>
+            <div>
+                <DailyActivity></DailyActivity>
+            </div>
             <div>
                 {/* TODO map sur chaque chiffres clés */}
                 <Card image={''} type={'Calories'} value={999} ></Card>
