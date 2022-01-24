@@ -11,7 +11,8 @@ const ChartLabel = styled.div`
 function Chart() {
     return (
         <ChartLabel>
-            
         </ChartLabel>
     )
   }
+
+  export default Chart;

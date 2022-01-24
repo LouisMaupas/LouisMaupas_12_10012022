@@ -12,6 +12,7 @@ import data from "../../backend/data_mocked";
 import DailyMotivation from '../../components/DailyMotivation';
 import Card from "../../components/Cards/index"
 import DailyActivity from '../../components/DailyActivity';
+import Chart from "../../components/Chart/index"
 
 // Component
 function Home() {
@@ -83,6 +84,9 @@ function Home() {
         margin-left: 109px;
         margin-top: 68px;
         `
+        const ChartsContainer = styled.div`
+        margin-right: 63px
+        `
     
 
   return (
@@ -92,14 +96,14 @@ function Home() {
           <DailyMotivation></DailyMotivation>
         </div>
         <div className='d-flex'>
-            <div>
+            <ChartsContainer>
                 <DailyActivity></DailyActivity>
-                <div>
-                    graphique 1
-                    graphique 2
-                    graphique 3
+                <div className='d-flex justify-content-between' >
+                    <Chart></Chart>
+                    <Chart></Chart>
+                    <Chart></Chart>
                 </div>
-            </div>
+            </ChartsContainer>
             <div>
                 {/* TODO map sur chaque chiffres clés */}
                 <Card image={''} type={'Calories'} value={999} ></Card>

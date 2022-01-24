@@ -8,7 +8,6 @@ export default function DailyActivity({profils}) {
     width: 835px;
     height: 320px;
     background-color: pink;
-    margin-right: 63px;
     `
 
     //Recharts
