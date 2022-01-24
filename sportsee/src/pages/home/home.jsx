@@ -28,21 +28,17 @@ function Home() {
         // const apiURL = data
         // let userId = 18
 
-
         // axios.get(`${apiURL}`, {
-        //     params: {
-        //       ID: userId
-        //     }
-        //   })
-        //   .then(function (response) {
-        //     console.log(response);
-        //   })
-        //   .catch(function (error) {
+        //      params: {
+        //        ID: userId
+        //      }
+        //    })
+        //    .then(function (response) {
+        //      console.log(response);
+        //    })
+        //    .catch(function (error) {
         //     console.log(error);
-        //   })
-        //   .then(function () {
-        //     // always executed
-        //   }); 
+        //   })           ; 
 
         // multiple concurrent requests
         // function getUserMainData() {
