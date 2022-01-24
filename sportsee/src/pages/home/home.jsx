@@ -1,9 +1,14 @@
 // React
 import React, { useState, useEffect } from 'react';
 
+// Img
+
+
 // App
 import Welcome from "../../components/Welcome";
 import data from "../../backend/data_mocked";
+import DailyMotivation from '../../components/DailyMotivation';
+import Card from "../../components/Cards/index"
 
 // Component
 function Home() {
@@ -61,7 +66,6 @@ function Home() {
 
 
         // TODO replace by axios
-        console.log(data.U)
         fetch(data.USER_MAIN_DATA)
             .then((response) => response.json()
             .then(({ myData }) => console.log(myData))
@@ -75,7 +79,20 @@ function Home() {
 
   return (
     <div>
-        <Welcome></Welcome>
+        <div>
+          <Welcome></Welcome>
+          <DailyMotivation></DailyMotivation>
+        </div>
+        <div>
+            <div></div>
+            <div>
+                {/* TODO map sur chaque chiffres clés */}
+                <Card image={''} type={'Calories'} value={999} ></Card>
+                <Card image={''} type={'Protéines'} value={999} ></Card>
+                <Card image={''} type={'Glucides'} value={999} ></Card>
+                <Card image={''} type={'Lipides'} value={999} ></Card>
+            </div>
+        </div>
     </div>
     )
 }

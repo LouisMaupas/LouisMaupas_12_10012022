@@ -1,8 +1,12 @@
-import styled from "styled-components"
+import styled from "styled-components";
+import PropTypes from 'prop-types';
 
 // styled-component
 const CardLabel = styled.div`
-  background: red;
+  background: #FBFBFB;
+  width: 258px;
+  Height: 124px;
+  border-radius: 5px;
 `
 
 // Component
