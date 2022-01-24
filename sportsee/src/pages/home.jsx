@@ -5,15 +5,15 @@ import React, { useState, useEffect } from 'react';
 import Welcome from "../components/Welcome";
 import data from "../backend/data_mocked";
 
-// Ext
-// import axios from "axios"
 
 
 
 // Component
 function Home() {
 
-    // Call API with fetch => https://github.com/axios/axios
+    /**
+     * Call API with axios => https://github.com/axios/axios
+     */
     useEffect(() => {
         fetch(data)
             .then((response) => response.json()

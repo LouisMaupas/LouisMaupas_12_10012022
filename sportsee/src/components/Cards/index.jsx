@@ -6,6 +6,11 @@ const CardLabel = styled.div`
 `
 
 // Component
+/**
+ * Generate cards
+ * @param {*} param0 
+ * @returns { HTMLElement } the card
+ */
 function Card({image, value, type}) {
   return (
       <CardLabel>
