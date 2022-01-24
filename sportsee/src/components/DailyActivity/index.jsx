@@ -5,7 +5,10 @@ export default function DailyActivity({profils}) {
 
     // styled-component
     const DailyActivityLabel = styled.div`
-    background-color: yellow;
+    width: 835px;
+    height: 320px;
+    background-color: pink;
+    margin-right: 63px;
     `
 
     //Recharts

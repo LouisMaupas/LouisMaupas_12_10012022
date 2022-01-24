@@ -1,8 +1,10 @@
 // React
 import React, { useState, useEffect } from 'react';
 
-// Img
+// Ext
+import styled from "styled-components";
 
+// Img
 
 // App
 import Welcome from "../../components/Welcome";
@@ -76,10 +78,15 @@ function Home() {
 
     }, [])
 
+        // styled-component
+        const HomeLabel = styled.div`
+        margin-left: 109px;
+        margin-top: 68px;
+        `
     
 
   return (
-    <div>
+    <HomeLabel>
         <div>
           <Welcome></Welcome>
           <DailyMotivation></DailyMotivation>
@@ -101,7 +108,7 @@ function Home() {
                 <Card image={''} type={'Lipides'} value={999} ></Card>
             </div>
         </div>
-    </div>
+    </HomeLabel>
     )
 }
 
