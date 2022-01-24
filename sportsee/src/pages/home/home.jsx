@@ -84,9 +84,14 @@ function Home() {
           <Welcome></Welcome>
           <DailyMotivation></DailyMotivation>
         </div>
-        <div>
+        <div className='d-flex'>
             <div>
                 <DailyActivity></DailyActivity>
+                <div>
+                    graphique 1
+                    graphique 2
+                    graphique 3
+                </div>
             </div>
             <div>
                 {/* TODO map sur chaque chiffres clés */}
