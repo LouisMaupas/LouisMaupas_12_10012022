@@ -105,7 +105,6 @@ function Home() {
                 </div>
             </ChartsContainer>
             <div>
-                {/* TODO map sur chaque chiffres clés */}
                 <Card image={''} type={'Calories'} value={999} ></Card>
                 <Card image={''} type={'Protéines'} value={999} ></Card>
                 <Card image={''} type={'Glucides'} value={999} ></Card>
