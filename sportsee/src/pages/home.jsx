@@ -35,7 +35,38 @@ function Home() {
         //     // always executed
         //   }); 
 
+        // multiple concurrent requests
+        // function getUserMainData() {
+        //     return axios.get('/user/12345');
+        //   }
+          
+        //   function getUserPerformance() {
+        //     return axios.get('/user/12345/permissions');
+        //   }          
+        //   function getUserActivity() {
+        //     return axios.get('/user/12345/permissions');
+        //   }          
+        //   function getUserAverageSessions() {
+        //     return axios.get('/user/12345/permissions');
+        //   }
+          
+        //   Promise.all([getUserMainData(), getUserPerformance(), getUserActivity(), getUserAverageSessions()])
+        //     .then(function (results) {
+        //       const userMainData = results[0],
+        //       userPerformance = results[1],
+        //       userActivity = results[2],
+        //       userAverageSessions = results[3];
+        //     });
 
+
+
+        // TODO replace by axios
+        console.log(data.U)
+        fetch(data.USER_MAIN_DATA)
+            .then((response) => response.json()
+            .then(({ myData }) => console.log(myData))
+            .catch((error) => console.log(error))
+        )
 
 
     }, [])
