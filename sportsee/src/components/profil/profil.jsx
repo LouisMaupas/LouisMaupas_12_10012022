@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export default function Profil({profils}) {
 
-    const profilsList = profils.map((el) =>
-    <li>{el}</li>
+    const profilsList = profils.map((el, index) =>
+    <li key={index} >{el}</li>
     )
 
     // styled-component
