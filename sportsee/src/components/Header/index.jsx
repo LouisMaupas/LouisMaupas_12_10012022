@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 
 // app
-import Profil from "../profil/profil"
+import Profil from "../Profil/index"
 
 // stylesheet
 import style from "./style.css"
