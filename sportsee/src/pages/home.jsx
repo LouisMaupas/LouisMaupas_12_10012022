@@ -14,25 +14,30 @@ function Home() {
      */
     useEffect(() => {
 
-        const axios = require('axios');
-        const apiURL = data
-        let userId = 18
+        // TODO URL => 404
+        // const axios = require('axios');
+        // const apiURL = data
+        // let userId = 18
 
 
-        axios.get(`${apiURL}`, {
-            params: {
-              ID: userId
-            }
-          })
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          })
-          .then(function () {
-            // always executed
-          }); 
+        // axios.get(`${apiURL}`, {
+        //     params: {
+        //       ID: userId
+        //     }
+        //   })
+        //   .then(function (response) {
+        //     console.log(response);
+        //   })
+        //   .catch(function (error) {
+        //     console.log(error);
+        //   })
+        //   .then(function () {
+        //     // always executed
+        //   }); 
+
+
+
+
     }, [])
 
     
