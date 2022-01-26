@@ -7,6 +7,13 @@ const CardLabel = styled.div`
   width: 258px;
   Height: 124px;
   border-radius: 5px;
+  > div .card__value {
+    font-weight: bold;
+    font-size: 20px
+  }
+  > div .card__type {
+    font-size: 14px
+  }
 `
 
 // Component
@@ -18,9 +25,15 @@ const CardLabel = styled.div`
 function Card({image, value, type}) {
   return (
       <CardLabel>
-          <img></img>
-          <div> {value} </div>
-          <div> {type} </div>
+        <div>
+          <img>
+            {/* {image} */}
+          </img>
+        </div>
+        <div>
+          <div className="card__value"> {value} </div>
+          <div className="card__type"> {type} </div>
+        </div>
       </CardLabel>
   )
 }

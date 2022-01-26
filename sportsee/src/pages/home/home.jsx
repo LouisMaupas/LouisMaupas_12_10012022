@@ -134,10 +134,10 @@ function Home() {
                 </div>
             </ChartsContainer>
             <div>
-                <Card image={''} type={'Calories'} value={999} ></Card>
-                <Card image={''} type={'Protéines'} value={999} ></Card>
-                <Card image={''} type={'Glucides'} value={999} ></Card>
-                <Card image={''} type={'Lipides'} value={999} ></Card>
+                <Card image={'a'} type={'Calories'} value={999} ></Card>
+                <Card image={'a'} type={'Protéines'} value={999} ></Card>
+                <Card image={'a'} type={'Glucides'} value={999} ></Card>
+                <Card image={'a'} type={'Lipides'} value={999} ></Card>
             </div>
         </div>
     </HomeLabel>
