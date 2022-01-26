@@ -12,7 +12,6 @@ import DataUsers from "./utils/context/index";
 
 const rootElement = document.getElementById("root");
 render(
-  <DataUsers>
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<App/>} />
@@ -27,6 +26,5 @@ render(
         />
       </Routes>
     </BrowserRouter>,
-  </DataUsers>,
   rootElement
 );
