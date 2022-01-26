@@ -12,7 +12,7 @@ import data from "../../backend/data_mocked";
 import DailyMotivation from '../../components/DailyMotivation';
 import Card from "../../components/Cards/index"
 import DailyActivity from '../../components/DailyActivity';
-import Chart from "../../components/Chart/index"
+import Chart from "../../components/Charts/LineChart/index"
 
 // Component
 function Home() {
@@ -83,6 +83,39 @@ function Home() {
         const ChartsContainer = styled.div`
         margin-right: 63px
         `
+
+        const firstChartData = {
+            sessions: [
+                {
+                    day: 1,
+                    sessionLength: 30
+                },
+                {
+                    day: 2,
+                    sessionLength: 23
+                },
+                {
+                    day: 3,
+                    sessionLength: 45
+                },
+                {
+                    day: 4,
+                    sessionLength: 50
+                },
+                {
+                    day: 5,
+                    sessionLength: 0
+                },
+                {
+                    day: 6,
+                    sessionLength: 0
+                },
+                {
+                    day: 7,
+                    sessionLength: 60
+                }
+            ]
+        }
     
 
   return (
@@ -95,7 +128,7 @@ function Home() {
             <ChartsContainer>
                 <DailyActivity></DailyActivity>
                 <div className='d-flex justify-content-between' >
-                    <Chart></Chart>
+                    <Chart type={'line'} data={firstChartData}></Chart>
                     <Chart></Chart>
                     <Chart></Chart>
                 </div>
