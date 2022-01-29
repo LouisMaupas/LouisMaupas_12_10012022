@@ -11,7 +11,7 @@ import Welcome from "../../components/Welcome";
 import data from "../../backend/data_mocked";
 import DailyMotivation from '../../components/DailyMotivation';
 import Card from "../../components/Cards/index"
-import DailyActivity from '../../components/DailyActivity';
+import BarChart from '../../components/Charts/BarChart';
 import Chart from "../../components/Charts/LineChart/index"
 
 // Component
@@ -126,7 +126,7 @@ function Home() {
         </div>
         <div className='d-flex'>
             <ChartsContainer>
-                <DailyActivity></DailyActivity>
+                <BarChart></BarChart>
                 <div className='d-flex justify-content-between' >
                     <Chart type={'line'} data={firstChartData}></Chart>
                     <Chart></Chart>

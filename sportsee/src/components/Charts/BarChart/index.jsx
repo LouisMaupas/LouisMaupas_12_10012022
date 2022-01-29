@@ -1,54 +1,8 @@
 import React, { PureComponent } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-const data = [
-  {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
+function Barchart() {
 
-export default class Example extends PureComponent {
-
-  render() {
     return (
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
@@ -64,7 +18,27 @@ export default class Example extends PureComponent {
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
-          <YAxis />
+          <YAxis
+              dataKey="kilogram"
+              yAxisId="left"
+              orientation="right"
+              stroke="#8884d8"
+              interval="number"
+              allowDecimals={false}
+              tickLine={false}
+              axisLine={false}
+              tick={{ fontSize: 14, fill: "#74798c" }}
+              tickCount={8}
+              domain={[data[1].minKg - 1, data[1].maxKg + 1]}
+            />
+            <YAxis
+              dataKey="calories"
+              yAxisId="right"
+              orientation="right"
+              stroke="#82ca9d"
+              hide={true}
+              domain={[data[1].minKcal - 100, data[1].maxKcal + 100]}
+            />
           <Tooltip />
           <Legend />
           <Bar dataKey="pv" fill="#8884d8" />
@@ -72,5 +46,6 @@ export default class Example extends PureComponent {
         </BarChart>
       </ResponsiveContainer>
     );
-  }
 }
+
+export default BarChart;
