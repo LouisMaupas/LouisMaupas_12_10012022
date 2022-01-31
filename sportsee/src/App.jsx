@@ -3,10 +3,10 @@ import Home from "./pages/home/home"
 import SideMenu from "./components/SideMenu"
 import index from "./index.css"
 import styled from "styled-components"
-// import React, { useContext } from 'react';
 import React from 'react';
 import ReactDOM from "react-dom";
-import userData from "./utils/context/index"
+import {UsersDataProvider} from "./utils/context/index"
+import { useState } from "react"
 
 
 // styled-component
@@ -18,17 +18,18 @@ const ContainerLabel = styled.div`
 
 export default function App() {
 
-  // const value = useContext(MyContext);
+  const [userId, setUserId] = useState()
+
 
   return (
-    // <userData.Provider value={usersData.exemple}>
+    <UsersDataProvider user={userId}>
     <div>
-        <Header></Header>
+        <Header user={userId} setUserId={setUserId} ></Header>
         <div className="d-flex">
           <SideMenu></SideMenu>
           <Home></Home>
         </div>
     </div>
-    // </userData.Provider>
+    </UsersDataProvider>
   );
 }

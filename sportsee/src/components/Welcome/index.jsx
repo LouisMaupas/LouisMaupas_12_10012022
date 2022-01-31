@@ -1,9 +1,15 @@
 // import style from "./style.css"
 
-export default function Welcome({name}) {
+import { useContext } from "react/cjs/react.development"
+import { UserContext } from "../../utils/context"
+
+export default function Welcome() {
+
+  const userData = useContext(UserContext)
+
   return (
     <div>
-        Bonjour {name}
+        Bonjour
     </div>
   )
 }
