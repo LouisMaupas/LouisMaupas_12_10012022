@@ -22,6 +22,8 @@ export default function Header({userId, setUserId}) {
         }
       `
 
+      console.log(userId)
+
   return (
     <header>
       <nav>

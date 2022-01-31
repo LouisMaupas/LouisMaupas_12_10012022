@@ -5,8 +5,7 @@ const UserContext = React.createContext();
 
 function UsersDataProvider(props) {
 
-    const [dataUser, setDataUser] = useState()
-
+    const [dataUser, setDataUser] = useState({hits: []})
 
     /**
      * Call API with axios => https://github.com/axios/axios
@@ -16,15 +15,15 @@ function UsersDataProvider(props) {
         const axios = require('axios');
         let userId = props;
         userId = 12
-        let apiURL = `http://localhost:3000/user/${userId}`;
-        axios.get(`${apiURL}`, {
-        })
-        .then(function (response) {
-            // console.log(response);
-        })
-        .catch(function (error) {
-            console.log(error);
-        }); 
+        // let apiURL = `http://localhost:3000/user/${userId}`;
+        // axios.get(`${apiURL}`, {
+        // })
+        // .then(function (response) {
+        //     // console.log(response);
+        // })
+        // .catch(function (error) {
+        //     console.log(error);
+        // }); 
 
         // multiple concurrent requests
         // function getUserMainData() {
@@ -51,15 +50,17 @@ function UsersDataProvider(props) {
 
 
         // TODO replace by axios
-        fetch(`http://localhost:3000/user/${userId}`)
-            .then((response) => response.json()
-            .then(({dataUser}) => console.log(dataUser))
-            .catch((error) => console.log(error))
-        )
+        const fetchData = async () => {
+            const result = await axios(
+                `http://localhost:3000/user/${userId}`
+            )
+            setDataUser(result.data.data)
+        }
+
+        fetchData()
+
     }, [])
 
-
-    // // const setUserData = useState([]);
     const userData = {
          exemple: {
          name: "Alice",
@@ -67,7 +68,7 @@ function UsersDataProvider(props) {
          }
      };
 
-     console.log(props)
+     console.log(dataUser)
 
     return (
         <UserContext.Provider value={dataUser}>

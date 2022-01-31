@@ -7,9 +7,12 @@ export default function Welcome() {
 
   const userData = useContext(UserContext)
 
+  console.log(userData)
+
   return (
     <div>
-        Bonjour
+        Bonjour 
+        {/* Bonjour {userData.userInfos.firstName} */}
     </div>
   )
 }
