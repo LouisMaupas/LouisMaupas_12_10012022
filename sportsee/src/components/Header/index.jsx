@@ -12,8 +12,7 @@ import { useState } from "react";
 
 
 
-export default function Header({probs}) {
-  console.log(probs)
+export default function Header({userId, setUserId}) {
       // styled-component
       const DivProfil = styled.div`
       color: white;
@@ -22,8 +21,6 @@ export default function Header({probs}) {
           cursor: pointer;
         }
       `
-
-  const [userId, setUserId] = useState()
 
   return (
     <header>

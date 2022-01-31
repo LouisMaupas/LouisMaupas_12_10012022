@@ -22,9 +22,9 @@ export default function App() {
 
 
   return (
-    <UsersDataProvider user={userId}>
+    <UsersDataProvider userId={userId}>
     <div>
-        <Header user={userId} setUserId={setUserId} ></Header>
+        <Header userId={userId} setUserId={setUserId} ></Header>
         <div className="d-flex">
           <SideMenu></SideMenu>
           <Home></Home>

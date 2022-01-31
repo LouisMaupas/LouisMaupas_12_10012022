@@ -5,7 +5,7 @@ const UserContext = React.createContext();
 
 function UsersDataProvider(props) {
 
-    const [dataUser, setDataUser] = useState({})
+    const [dataUser, setDataUser] = useState()
 
 
     /**
@@ -51,7 +51,7 @@ function UsersDataProvider(props) {
 
 
         // TODO replace by axios
-        fetch('http://localhost:3000/user/12')
+        fetch(`http://localhost:3000/user/${userId}`)
             .then((response) => response.json()
             .then(({dataUser}) => console.log(dataUser))
             .catch((error) => console.log(error))
