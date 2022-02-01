@@ -10,7 +10,7 @@ const UserContext = React.createContext();
  */
 function UsersDataProvider(props) {
 
-    const [dataUser, setDataUser] = useState({hits: []})
+    const [userData, setUserData] = useState()
 
     /**
      * Call API with axios => https://github.com/axios/axios
@@ -18,8 +18,8 @@ function UsersDataProvider(props) {
      */
      useEffect(() => {
         const axios = require('axios');
-        let userId = props;
-        userId = 12
+        console.log(props)
+        let userId = props.userId;
         // let apiURL = `http://localhost:3000/user/${userId}`;
         // axios.get(`${apiURL}`, {
         // })
@@ -59,24 +59,26 @@ function UsersDataProvider(props) {
             const result = await axios(
                 `http://localhost:3000/user/${userId}`
             )
-            setDataUser(result.data.data)
+            console.log(result)
+
+            setUserData(result.data.data)
         }
 
         fetchData()
 
     }, [])
 
-    const userData = {
-         exemple: {
-         name: "Alice",
-         id: 123456
-         }
-     };
+    // const userData = {
+    //      exemple: {
+    //      name: "Alice",
+    //      id: 123456
+    //      }
+    //  };
 
-     console.log(dataUser)
+     console.log(userData)
 
     return (
-        <UserContext.Provider value={dataUser}>
+        <UserContext.Provider value={userData}>
             {props.children}
         </UserContext.Provider>
     );

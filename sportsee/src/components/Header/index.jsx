@@ -35,11 +35,10 @@ export default function Header(props) {
           <img src={logo} ></img>
           <li><Link to="/">Accueil</Link></li>
           <li>
-            Profil
+            Profil : User {userId}
             <div>
-            <DivProfil onClick={() => setUserId('12')} >User 12</DivProfil>
-            <DivProfil onClick={() => setUserId('18')} >User 18</DivProfil>
-            <div> User choisi : {userId} </div>
+              <DivProfil onClick={() => setUserId('12')} >User 12</DivProfil>
+              <DivProfil onClick={() => setUserId('18')} >User 18</DivProfil>
             </div>
           </li>
           <li>Réglage</li>
