@@ -18,13 +18,12 @@ const ContainerLabel = styled.div`
 
 export default function App() {
 
-  const [userId, setUserId] = useState()
-
+  const [userId, setUserId] = useState('12');
 
   return (
     <UsersDataProvider userId={userId}>
     <div>
-        <Header userId={userId} setUserId={setUserId} ></Header>
+        <Header state={{ id: [userId, setUserId] }} />
         <div className="d-flex">
           <SideMenu></SideMenu>
           <Home></Home>

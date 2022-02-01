@@ -12,7 +12,7 @@ import { useState } from "react";
 
 
 
-export default function Header({userId, setUserId}) {
+export default function Header(props) {
       // styled-component
       const DivProfil = styled.div`
       color: white;
@@ -21,8 +21,12 @@ export default function Header({userId, setUserId}) {
           cursor: pointer;
         }
       `
-
-      console.log(userId)
+        const {
+          id: [userId, setUserId]
+        } = {
+          count: useState('12'),
+          ...(props.state)
+        };
 
   return (
     <header>
@@ -35,6 +39,7 @@ export default function Header({userId, setUserId}) {
             <div>
             <DivProfil onClick={() => setUserId('12')} >User 12</DivProfil>
             <DivProfil onClick={() => setUserId('18')} >User 18</DivProfil>
+            <div> User choisi : {userId} </div>
             </div>
           </li>
           <li>Réglage</li>
