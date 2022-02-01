@@ -3,6 +3,11 @@ import React, { useContext, useState, useEffect } from 'react';
 
 const UserContext = React.createContext();
 
+/**
+ * Get User ID as param and return user data 
+ * @param {*} props User ID
+ * @returns 
+ */
 function UsersDataProvider(props) {
 
     const [dataUser, setDataUser] = useState({hits: []})
