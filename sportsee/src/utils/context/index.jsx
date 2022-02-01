@@ -9,8 +9,9 @@ const UserContext = React.createContext();
  * @returns 
  */
 function UsersDataProvider(props) {
-
-    const [userData, setUserData] = useState()
+    const [userData, setUserData] = useState(12)
+    let [id, setId]= useState(props.id)
+    setId = props.id
 
     /**
      * Call API with axios => https://github.com/axios/axios
@@ -18,41 +19,8 @@ function UsersDataProvider(props) {
      */
      useEffect(() => {
         const axios = require('axios');
-        console.log(props)
-        let userId = props.userId;
-        // let apiURL = `http://localhost:3000/user/${userId}`;
-        // axios.get(`${apiURL}`, {
-        // })
-        // .then(function (response) {
-        //     // console.log(response);
-        // })
-        // .catch(function (error) {
-        //     console.log(error);
-        // }); 
-
-        // multiple concurrent requests
-        // function getUserMainData() {
-        //     return axios.get('/user/12345');
-        //   }
-          
-        //   function getUserPerformance() {
-        //     return axios.get('/user/12345/permissions');
-        //   }          
-        //   function getUserActivity() {
-        //     return axios.get('/user/12345/permissions');
-        //   }          
-        //   function getUserAverageSessions() {
-        //     return axios.get('/user/12345/permissions');
-        //   }
-          
-        //   Promise.all([getUserMainData(), getUserPerformance(), getUserActivity(), getUserAverageSessions()])
-        //     .then(function (results) {
-        //       const userMainData = results[0],
-        //       userPerformance = results[1],
-        //       userActivity = results[2],
-        //       userAverageSessions = results[3];
-        //     });
-
+        let userId = props.id;
+        console.log(userId)
 
         // TODO replace by axios
         const fetchData = async () => {
@@ -60,20 +28,12 @@ function UsersDataProvider(props) {
                 `http://localhost:3000/user/${userId}`
             )
             console.log(result)
-
             setUserData(result.data.data)
         }
-
+        // TODO : FIX : call infini
         fetchData()
 
-    }, [])
-
-    // const userData = {
-    //      exemple: {
-    //      name: "Alice",
-    //      id: 123456
-    //      }
-    //  };
+    }, id)
 
      console.log(userData)
 
