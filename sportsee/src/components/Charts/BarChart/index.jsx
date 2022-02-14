@@ -8,7 +8,7 @@ function Barchart() {
         <BarChart
           width={500}
           height={300}
-          data={data}
+          // data={data}
           margin={{
             top: 5,
             right: 30,
@@ -29,7 +29,7 @@ function Barchart() {
               axisLine={false}
               tick={{ fontSize: 14, fill: "#74798c" }}
               tickCount={8}
-              domain={[data[1].minKg - 1, data[1].maxKg + 1]}
+              // domain={[data[1].minKg - 1, data[1].maxKg + 1]}
             />
             <YAxis
               dataKey="calories"
@@ -37,7 +37,7 @@ function Barchart() {
               orientation="right"
               stroke="#82ca9d"
               hide={true}
-              domain={[data[1].minKcal - 100, data[1].maxKcal + 100]}
+              // domain={[data[1].minKcal - 100, data[1].maxKcal + 100]}
             />
           <Tooltip />
           <Legend />

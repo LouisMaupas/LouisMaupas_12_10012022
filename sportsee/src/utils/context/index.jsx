@@ -19,24 +19,21 @@ function UsersDataProvider(props) {
      */
      useEffect(() => {
         const axios = require('axios');
-        let userId = props.id;
-        console.log(userId)
-
+        let userId = 12
+        if (props.id === undefined) {
+            userId = 12;
+        } else {
+            userId = props.id
+        }
         // TODO replace by axios
         const fetchData = async () => {
             const result = await axios(
                 `http://localhost:3000/user/${userId}`
             )
-            console.log(result)
             setUserData(result.data.data)
         }
-        // TODO : FIX : call infini
         fetchData()
-
-    }, id)
-
-     console.log(userData)
-
+    }, ['id'])
     return (
         <UserContext.Provider value={userData}>
             {props.children}
