@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import PropTypes from 'prop-types';
 
+
 // styled-component
 const CardLabel = styled.div`
   background: #FBFBFB;
@@ -26,12 +27,11 @@ function Card({image, value, type}) {
   return (
       <CardLabel>
         <div>
-          <img>
-            {/* {image} */}
+          <img src={image}>
           </img>
         </div>
         <div>
-          <div className="card__value"> {value} </div>
+          <div className="card__value"> {value} <span>{type === 'Calories' ? 'kCal' : 'g'}</span></div>
           <div className="card__type"> {type} </div>
         </div>
       </CardLabel>

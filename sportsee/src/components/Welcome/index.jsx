@@ -5,7 +5,7 @@ import { UserContext } from "../../utils/context"
 
 export default function Welcome() {
 
-  const userData = useContext(UserContext)
+  let userData = useContext(UserContext)
   return (
     <div>
         Bonjour { userData.id ? userData.userInfos.firstName : 'Veuillez choisir un profil.'}

@@ -9,7 +9,7 @@ const UserContext = React.createContext();
  * @returns 
  */
 function UsersDataProvider(props) {
-    const [userData, setUserData] = useState(12)
+    let [userData, setUserData] = useState(12)
     let [id, setId]= useState(props.id)
     setId = props.id
 

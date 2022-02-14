@@ -1,10 +1,15 @@
 // React
 import React, { useState, useEffect } from 'react';
+import { useContext } from "react/cjs/react.development"
 
 // Ext
 import styled from "styled-components";
 
 // Img
+import iconCalories from "../../img/icon_calories.png"
+import iconCarbs from "../../img/icon_carbs.png"
+import iconFat from "../../img/icon_fat.png"
+import iconProtein from "../../img/icon_protein.png"
 
 // App
 import Welcome from "../../components/Welcome";
@@ -12,11 +17,16 @@ import data from "../../backend/data_mocked";
 import DailyMotivation from '../../components/DailyMotivation';
 import Card from "../../components/Cards/index"
 import BarChart from '../../components/Charts/BarChart';
-import Chart from "../../components/Charts/LineChart/index"
+import Chart from "../../components/Charts/LineChart/index";
+import { UserContext } from "../../utils/context"
+
+
 
 // Component
 function Home() {
 
+        // Get user data
+        let userData = useContext(UserContext)
 
         // styled-component
         const HomeLabel = styled.div`
@@ -32,30 +42,6 @@ function Home() {
                 {
                     day: 1,
                     sessionLength: 30
-                },
-                {
-                    day: 2,
-                    sessionLength: 23
-                },
-                {
-                    day: 3,
-                    sessionLength: 45
-                },
-                {
-                    day: 4,
-                    sessionLength: 50
-                },
-                {
-                    day: 5,
-                    sessionLength: 0
-                },
-                {
-                    day: 6,
-                    sessionLength: 0
-                },
-                {
-                    day: 7,
-                    sessionLength: 60
                 }
             ]
         }
@@ -77,10 +63,10 @@ function Home() {
                 </div>
             </ChartsContainer>
             <div>
-                <Card image={'a'} type={'Calories'} value={999} ></Card>
-                <Card image={'a'} type={'Protéines'} value={999} ></Card>
-                <Card image={'a'} type={'Glucides'} value={999} ></Card>
-                <Card image={'a'} type={'Lipides'} value={999} ></Card>
+                <Card image={iconCalories} value={userData.keyData ? userData.keyData.calorieCount : null} type={'Calories'} ></Card>
+                <Card image={iconProtein} value={userData.keyData ? userData.keyData.carbohydrateCount : null} type={'Proteines'} ></Card>
+                <Card image={iconCarbs} value={userData.keyData ? userData.keyData.lipidCount : null} type={'Glucides'} ></Card>
+                <Card image={iconFat} value={userData.keyData ? userData.keyData.proteinCount : null} type={'Lipides'} ></Card>
             </div>
         </div>
     </HomeLabel>

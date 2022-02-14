@@ -18,7 +18,8 @@ const ContainerLabel = styled.div`
 
 export default function App() {
 
-  const [userId, setUserId] = useState();
+  let [userId, setUserId] = useState();
+  console.log(userId)
 
   return (
     <UsersDataProvider id={userId}>

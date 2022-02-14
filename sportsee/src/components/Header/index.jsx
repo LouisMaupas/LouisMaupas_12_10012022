@@ -21,10 +21,11 @@ export default function Header(props) {
           cursor: pointer;
         }
       `
-        const {
+      // Hook useStat : déclare une variable d'état useState pour l'ID. La valeur par défaut est 12.
+        let {
           id: [userId, setUserId]
         } = {
-          count: useState('12'),
+          id: useState('12'),
           ...(props.state)
         };
 
