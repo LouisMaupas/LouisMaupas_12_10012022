@@ -37,27 +37,17 @@ function Home() {
         margin-right: 63px
         `
 
-        const firstChartData = {
-            sessions: [
-                {
-                    day: 1,
-                    sessionLength: 30
-                }
-            ]
-        }
-    
-
   return (
     <HomeLabel>
         <div>
-          <Welcome></Welcome>
+          <Welcome userName={userData.id ? userData.userInfos.firstName : null} ></Welcome>
           <DailyMotivation></DailyMotivation>
         </div>
         <div className='d-flex'>
             <ChartsContainer>
                 <BarChart></BarChart>
                 <div className='d-flex justify-content-between' >
-                    <Chart type={'line'} data={firstChartData}></Chart>
+                    <Chart type={'line'}></Chart>
                     <Chart></Chart>
                     <Chart></Chart>
                 </div>
