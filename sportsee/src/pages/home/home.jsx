@@ -36,7 +36,7 @@ function Home() {
         const ChartsContainer = styled.div`
         margin-right: 63px
         `
-
+    console.log(userData)
   return (
     <HomeLabel>
         <div>
@@ -45,7 +45,7 @@ function Home() {
         </div>
         <div className='d-flex'>
             <ChartsContainer>
-                <BarChart></BarChart>
+                <BarChart data={userData}></BarChart>
                 <div className='d-flex justify-content-between' >
                     <Chart type={'line'}></Chart>
                     <Chart></Chart>
