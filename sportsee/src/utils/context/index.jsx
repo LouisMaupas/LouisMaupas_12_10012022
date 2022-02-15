@@ -14,11 +14,10 @@ function UsersDataProvider(props) {
     setId = props.id
 
     /**
-     * Call API with axios => https://github.com/axios/axios
+     * Call API with axios (https://github.com/axios/axios)
      * Make a request for a user with a given ID
      */
      useEffect(() => {
-
         let userId = 12
         if (props.id === undefined) {
             userId = 12;
@@ -28,7 +27,6 @@ function UsersDataProvider(props) {
 
         const url = `http://localhost:3000`,
             axios = require('axios');
-
 
         function getUserAccount() {
             return axios.get(`${url}/user/${userId}`);
