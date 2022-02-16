@@ -26,7 +26,9 @@ import { UserContext } from "../../utils/context"
 function Home() {
 
         // Get user data
-        let userData = useContext(UserContext)
+        const userData = useContext(UserContext),
+        userAccount = userData.userAccount,
+        userActivity = userData.userActivity;
 
         // styled-component
         const HomeLabel = styled.div`
@@ -36,16 +38,16 @@ function Home() {
         const ChartsContainer = styled.div`
         margin-right: 63px
         `
-    console.log(userData)
+    console.log(userAccount)
   return (
     <HomeLabel>
         <div>
-          <Welcome userName={userData.id ? userData.userInfos.firstName : null} ></Welcome>
+          <Welcome userName={userAccount.id ? userAccount.userInfos.firstName : null} ></Welcome>
           <DailyMotivation></DailyMotivation>
         </div>
         <div className='d-flex'>
             <ChartsContainer>
-                <BarChart data={userData}></BarChart>
+                <BarChart data={userActivity}></BarChart>
                 <div className='d-flex justify-content-between' >
                     <Chart type={'line'}></Chart>
                     <Chart></Chart>
@@ -53,10 +55,10 @@ function Home() {
                 </div>
             </ChartsContainer>
             <div>
-                <Card image={iconCalories} value={userData.keyData ? userData.keyData.calorieCount : null} type={'Calories'} ></Card>
-                <Card image={iconProtein} value={userData.keyData ? userData.keyData.carbohydrateCount : null} type={'Proteines'} ></Card>
-                <Card image={iconCarbs} value={userData.keyData ? userData.keyData.lipidCount : null} type={'Glucides'} ></Card>
-                <Card image={iconFat} value={userData.keyData ? userData.keyData.proteinCount : null} type={'Lipides'} ></Card>
+                <Card image={iconCalories} value={userAccount.keyData ? userAccount.keyData.calorieCount : null} type={'Calories'} ></Card>
+                <Card image={iconProtein} value={userAccount.keyData ? userAccount.keyData.carbohydrateCount : null} type={'Proteines'} ></Card>
+                <Card image={iconCarbs} value={userAccount.keyData ? userAccount.keyData.lipidCount : null} type={'Glucides'} ></Card>
+                <Card image={iconFat} value={userAccount.keyData ? userAccount.keyData.proteinCount : null} type={'Lipides'} ></Card>
             </div>
         </div>
     </HomeLabel>

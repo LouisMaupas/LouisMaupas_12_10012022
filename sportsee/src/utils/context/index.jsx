@@ -9,7 +9,11 @@ const UserContext = React.createContext();
  * @returns 
  */
 function UsersDataProvider(props) {
-    let [userData, setUserData] = useState(12)
+    // let [userData, setUserData] = useState(12)
+    const [userAccount, setUserAccount] = useState(12)
+    const [userActivity, setUserActivity] = useState([])
+    const [userAverageSessions, setUserAverageSessions] = useState([])
+    const [userPerformance, setUserPerformance] = useState([])
     let [id, setId]= useState(props.id)
     setId = props.id
 
@@ -46,32 +50,28 @@ function UsersDataProvider(props) {
           
           Promise.all([getUserAccount(), getUserActivity(), getUserAverageSessions(), getUserPerformance()])
             .then(function (results) {
-              const account = results[0];
-              const activity = results[1];
-              const averageSessions = results[2];
-              const performance = results[3];
-              console.log(results)
+                setUserAccount(results[0].data.data)
+                setUserActivity(results[1].data.data);
+                setUserAverageSessions(results[2].data.data);
+                setUserPerformance(results[3].data.data);
+            })
+            .catch(error => {
+                if (error.response) {
+                    //response status is an error code
+                    console.log(error.response.status);
+                }
+                else if (error.request) {
+                    //response not received though the request was sent
+                    console.log(error.request);
+                }
+                else {
+                    //an error occurred when setting up the request
+                    console.log(error.message);
+                }
             });
-        // const axios = require('axios');
-        // let userId = 12
-        // if (props.id === undefined) {
-        //     userId = 12;
-        // } else {
-        //     userId = props.id
-        // }
-        // // TODO replace by axios
-        // const fetchData = async () => {
-        //     const result = await axios(
-        //         `http://localhost:3000/user/${userId}`
-        //     )
-        //     setUserData(result.data.data)
-        // }
-        // fetchData()
     }, ['id'])
-    console.log(userData)
-    let test = 'test!'
     return (
-        <UserContext.Provider value={userData} activity={test}>
+        <UserContext.Provider value={{userAccount, userActivity, userAverageSessions, userPerformance}}>
             {props.children}
         </UserContext.Provider>
     );
