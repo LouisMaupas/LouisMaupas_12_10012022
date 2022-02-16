@@ -54,6 +54,7 @@ function Home() {
                 </div>
             </ChartsContainer>
             <div>
+                {/* TODO ajouter une classeName mb-3  */}
                 <Card image={iconCalories} value={userAccount.keyData ? userAccount.keyData.calorieCount : null} type={'Calories'} ></Card>
                 <Card image={iconProtein} value={userAccount.keyData ? userAccount.keyData.carbohydrateCount : null} type={'Proteines'} ></Card>
                 <Card image={iconCarbs} value={userAccount.keyData ? userAccount.keyData.lipidCount : null} type={'Glucides'} ></Card>

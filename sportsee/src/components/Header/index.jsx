@@ -17,7 +17,7 @@ export default function Header(props) {
       const DivProfil = styled.div`
       color: white;
         &:hover {
-          color: blue;
+          color: grey;
           cursor: pointer;
         }
       `

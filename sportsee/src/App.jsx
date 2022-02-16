@@ -22,13 +22,11 @@ export default function App() {
 
   return (
     <UsersDataProvider id={userId}>
-    <div>
         <Header state={{ id: [userId, setUserId] }} />
         <div className="d-flex">
           <SideMenu></SideMenu>
           <Home></Home>
         </div>
-    </div>
     </UsersDataProvider>
   );
 }

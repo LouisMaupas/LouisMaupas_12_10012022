@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 
 // styled-component
 const CardLabel = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #FBFBFB;
   width: 258px;
   Height: 124px;
