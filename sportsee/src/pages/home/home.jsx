@@ -38,7 +38,6 @@ function Home() {
         const ChartsContainer = styled.div`
         margin-right: 63px
         `
-    console.log(userAccount)
   return (
     <HomeLabel>
         <div>
