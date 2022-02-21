@@ -13,12 +13,6 @@ function BarChartMain(data) {
   border-radius: 5px;
   `
 
-
-  function getDays() {
-
-  }
-
-
   /**
    * 
    * @param {*} param0 
