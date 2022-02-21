@@ -17,6 +17,7 @@ import DailyMotivation from "../../components/DailyMotivation";
 import Card from "../../components/Cards/index";
 import BarChart from "../../components/Charts/BarChart";
 import LineChart from "../../components/Charts/LineChart";
+import RadarChart from "../../components/Charts/RadarChart";
 import { UserContext } from "../../utils/context";
 
 // Component
@@ -25,7 +26,8 @@ function Home() {
   const userData = useContext(UserContext),
     userAccount = userData.userAccount,
     userActivity = userData.userActivity,
-    userAverageSessions = userData.userAverageSessions;
+    userAverageSessions = userData.userAverageSessions,
+    userPerformance = userData.userPerformance;
 
   // styled-component
   const HomeLabel = styled.div`
@@ -48,8 +50,8 @@ function Home() {
           <BarChart data={userActivity}></BarChart>
           <div className="d-flex justify-content-between">
             <LineChart data={userAverageSessions}></LineChart>
-            {/* <Chart></Chart>
-            <Chart></Chart> */}
+            <RadarChart data={userPerformance}></RadarChart>
+            {/* <Chart></Chart> */}
           </div>
         </ChartsContainer>
         <div>
