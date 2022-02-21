@@ -1,25 +1,33 @@
-import styled from "styled-components";
-import React, { PureComponent } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+// React
+import React, { useState, useEffect } from "react";
+import { useContext } from "react/cjs/react.development";
 
-// styled-component
-const ChartLabel = styled.div`
-  background: red;
-  width: 258px;
-  Height: 263px;
-  border-radius: 5px;
-`
+import { PieChart, Pie } from "recharts";
 
-function Chart(type, data) {
+function Piechart(data) {
+  const pieChartMainData = data.data;
 
-    return (
+  return (
+    <div>
+      <div>Score</div>
+      <PieChart width={258} height={263}>
+        <Pie
+          data={}
+          dataKey=""
+          startAngle={startangle}
+          endAngle={endangle}
+          cx="50%"
+          cy="50%"
+          innerRadius={80}
+          outerRadius={90}
+          fill=""
+        />
+      </PieChart>
       <div>
-                <ChartLabel>
-          
-        </ChartLabel>
+        <p>de votre objectif</p>
       </div>
+    </div>
+  );
+}
 
-    )
-  }
-
-  export default Chart;
+export default Piechart;

@@ -18,6 +18,7 @@ import Card from "../../components/Cards/index";
 import BarChart from "../../components/Charts/BarChart";
 import LineChart from "../../components/Charts/LineChart";
 import RadarChart from "../../components/Charts/RadarChart";
+import RadialChart from "../../components/Charts/RadialChart";
 import { UserContext } from "../../utils/context";
 
 // Component
@@ -51,7 +52,7 @@ function Home() {
           <div className="d-flex justify-content-between">
             <LineChart data={userAverageSessions}></LineChart>
             <RadarChart data={userPerformance}></RadarChart>
-            {/* <Chart></Chart> */}
+            <RadialChart data={null}></RadialChart>
           </div>
         </ChartsContainer>
         <div>
