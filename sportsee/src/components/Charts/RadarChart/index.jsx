@@ -7,10 +7,10 @@ import {
   PolarRadiusAxis,
 } from "recharts";
 
+// TODO : bug cf console
 function Radarchart(data) {
   const radarChartMainData = data.data;
   const radarChartLabels = radarChartMainData.kind;
-  console.log(radarChartLabels);
   return (
     <div id="radarchart" className="card">
       <RadarChart

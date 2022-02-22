@@ -13,9 +13,10 @@ import {
 } from "recharts";
 
 function LinechartComponent(data) {
+  console.log(data);
   const lineChartMainData = data.data.sessions;
   console.log(lineChartMainData);
-
+  console.log(lineChartMainData);
   return (
     <div id="line-chart" className="card">
       <div className="linechart-title">Durée moyenne des sessions</div>

@@ -51,8 +51,8 @@ function Home() {
           <BarChart data={userActivity}></BarChart>
           <div className="d-flex justify-content-between">
             <LineChart data={userAverageSessions}></LineChart>
-            <RadarChart data={userPerformance}></RadarChart>
-            <RadialChart data={null}></RadialChart>
+            {/* <RadarChart data={userPerformance}></RadarChart> */}
+            <RadialChart data={userAccount}></RadialChart>
           </div>
         </ChartsContainer>
         <div>
