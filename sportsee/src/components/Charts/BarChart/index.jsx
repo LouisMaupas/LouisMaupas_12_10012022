@@ -21,6 +21,19 @@ function BarChartComponent(data) {
     background-color: #fbfbfb;
     border-radius: 5px;
   `;
+  //
+  const StyledTooltip = styled.div`
+    background-color: red;
+    color: #fff;
+    font-size: 0.5em;
+    text-align: center;
+    height: 63px;
+    min-width: 39px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  `;
 
   /**
    *
@@ -30,10 +43,10 @@ function BarChartComponent(data) {
   function Tooltip({ active, payload }) {
     if (active) {
       return (
-        <div>
+        <StyledTooltip>
           <p>{`${payload[0].value}kg`}</p>
           <p>{`${payload[1].value}kCal`}</p>
-        </div>
+        </StyledTooltip>
       );
     }
     return null;
@@ -49,14 +62,6 @@ function BarChartComponent(data) {
           <Tooltip
             content={<tooltip />}
             cursor={{ stroke: "rgba(224,224,224,0.3)" }}
-            contentStyle={{ color: "white", backgroundColor: "red" }}
-            wrapperStyle={{
-              width: 39,
-              height: 63,
-              fontSize: 10,
-              color: "white",
-              backgroundColor: "red",
-            }}
           />
 
           <Legend
