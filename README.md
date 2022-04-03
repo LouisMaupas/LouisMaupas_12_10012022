@@ -13,7 +13,7 @@
         </ul>
     </p>
     <h2>Etapes d’installation</h2>
-    <p>
+
 
     1. Get backend at [https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard]
 
@@ -32,7 +32,7 @@
     ```js
     const url = `http://localhost:3000`,
     ```
-    </p>
+
 
     <h3>Available Scripts</h3>
     <p>
