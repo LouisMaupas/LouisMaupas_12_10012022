@@ -18,11 +18,13 @@
     </p>
     <p>
     2. Clone the repo
+    </p>
     ```sh
     git clone https://github.com/LouisMaupas/LouisMaupas_12_10012022.git
     ```
-    </p>
+    <p>
     3. Install NPM packages
+    </p>
     ```sh
     npm install
     ```
