@@ -14,7 +14,7 @@
     <h2>Installation</h2>
     <ul>
         <li>
-            1. Get backend at 
+            1. Get backend at </br>
             <a href="https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard">
                 [P9-front-end-dashboard]
             </a>
@@ -24,9 +24,9 @@
             git clone https://github.com/LouisMaupas/LouisMaupas_12_10012022.git
         </li>
         <li>
-            <h3>
-                3. Install NPM packages
-            </h3>
+            <h4>
+                3. Install NPM packages </br>
+            </h4>
             npm install
         </li>
     </ul>
