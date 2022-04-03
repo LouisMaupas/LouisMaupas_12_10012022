@@ -27,8 +27,8 @@ function Home() {
   const userData = useContext(UserContext),
     userAccount = userData.userAccount,
     userActivity = userData.userActivity,
-    userAverageSessions = userData.userAverageSessions,
-    userPerformance = userData.userPerformance;
+    userAverageSessions = userData.userAverageSessions.sessions,
+    userPerformance = userData.userPerformance.data;
 
   // styled-component
   const HomeLabel = styled.div`
@@ -51,7 +51,7 @@ function Home() {
           <BarChart data={userActivity}></BarChart>
           <div className="d-flex justify-content-between">
             <LineChart data={userAverageSessions}></LineChart>
-            {/* <RadarChart data={userPerformance}></RadarChart> */}
+            <RadarChart data={userPerformance}></RadarChart>
             <RadialChart data={userAccount}></RadialChart>
           </div>
         </ChartsContainer>

@@ -5,7 +5,8 @@ import { useContext } from "react/cjs/react.development";
 import { PieChart, Pie } from "recharts";
 
 function Piechart(data) {
-  const pieChartMainData = data.data.todayScore * 100;
+  console.log(data);
+  const pieChartMainData = data.data.todayScore * 100 || data.data.score * 100;
 
   let score = 0;
   if (data) score = { score: pieChartMainData };
@@ -14,11 +15,11 @@ function Piechart(data) {
     endangle = startangle + score.score * 3.6;
 
   return (
-    <div>
-      <div>Score</div>
+    <div id="piechart" className="card">
+      <div id="score-title">Score</div>
       <PieChart width={258} height={263}>
         <Pie
-          data={score}
+          data={score.score}
           dataKey="score"
           startAngle={startangle}
           endAngle={endangle}
@@ -29,8 +30,8 @@ function Piechart(data) {
           fill="red"
         />
       </PieChart>
-      <div>
-        <p>{pieChartMainData}%</p>
+      <div id="result">
+        <p id="resultscore">{score.score}%</p>
         <p>de votre objectif</p>
       </div>
     </div>

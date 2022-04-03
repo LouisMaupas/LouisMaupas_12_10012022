@@ -22,7 +22,7 @@ const CardLabel = styled.div`
 
 // Component
 /**
- * Generate cards
+ * Generate Card component
  * @param {*} param0
  * @returns { HTMLElement } the card
  */
