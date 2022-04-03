@@ -32,7 +32,7 @@
             const url = `http://localhost:3000`
         </li>
     </ul>
-    <h3>Available Scripts</h3>
+    <h2>Available Scripts</h2>
         <h4>npm run start</h4>
         <p>
             Runs the app in the development mode.
