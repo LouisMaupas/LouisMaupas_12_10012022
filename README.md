@@ -17,15 +17,15 @@
     1. Get backend at [https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard]
 
     2. Clone the repo
-    ```sh
+    ```
     git clone https://github.com/LouisMaupas/LouisMaupas_12_10012022.git
     ```
     3. Install NPM packages
-    ```sh
+    ```
     npm install
     ```
     4. Enter API url in `index.jsx`
-    ```js
+    ```
     const url = `http://localhost:3000`,
     ```
 
