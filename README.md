@@ -20,7 +20,7 @@
             </a>
         </li>
         <li>
-            2. Clone the repo
+            2. Clone the repo </br>
             git clone https://github.com/LouisMaupas/LouisMaupas_12_10012022.git
         </li>
         <li>
