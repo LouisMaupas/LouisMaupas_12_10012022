@@ -21,15 +21,23 @@
         </li>
         <li>
             2. Clone the repo
-            ```sh
+
+            ```
             git clone https://github.com/LouisMaupas/LouisMaupas_12_10012022.git
+            ```
+
+        </li>
+        <li>
+            <h3>
+                3. Install NPM packages
+            </h3>
+
+            ```sh
+            npm install
             ```
         </li>
     </ul>
-    3. Install NPM packages
-    ```sh
-    npm install
-    ```
+
     4. Enter API url in `index.jsx`
     ```js
     const url = `http://localhost:3000`,
