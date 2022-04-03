@@ -28,7 +28,7 @@
             npm install
         </li>
         <li>
-            4. Enter API url in `index.jsx`</br>
+            4. Enter API url in `src\utils\context\index.jsx`</br>
             const url = `http://localhost:3000`
         </li>
     </ul>
