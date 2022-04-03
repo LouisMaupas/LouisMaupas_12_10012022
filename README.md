@@ -13,16 +13,15 @@
         </ul>
     </p>
     <h2>Etapes d’installation</h2>
-
-
-    1. Get backend at [https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard]
-
+    <p>
+        1. Get backend at [https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard]
+    </p>
+    <p>
     2. Clone the repo
-
     ```sh
     git clone https://github.com/LouisMaupas/LouisMaupas_12_10012022.git
     ```
-
+    </p>
     3. Install NPM packages
     ```sh
     npm install
