@@ -14,9 +14,11 @@
     </p>
     <h2>Etapes d’installation</h2>
     <p>
+
     1. Get backend at [https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard]
-    
+
     2. Clone the repo
+
     ```sh
     git clone https://github.com/LouisMaupas/LouisMaupas_12_10012022.git
     ```
