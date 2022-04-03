@@ -24,6 +24,11 @@ function CustomTooltip({ payload, active }) {
   return null;
 }
 
+/**
+ * LineChart component using Recharts
+ * @param {*} props
+ * @returns
+ */
 function LinechartComponent(props) {
   //change the days of the data to be more explicit with the letters of the days
   const dates = ["L", "M", "M", "J", "V", "S", "D"],

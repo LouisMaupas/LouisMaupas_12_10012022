@@ -13,7 +13,11 @@ import {
 // Ext
 import styled from "styled-components";
 
-// Component
+/**
+ * BarChart component using Recharts
+ * @param {*} data
+ * @returns
+ */
 function BarChartComponent(data) {
   const barChartMainData = data.data.sessions;
   // styles

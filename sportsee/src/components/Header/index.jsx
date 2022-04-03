@@ -10,6 +10,11 @@ import logo from "../../img/logo.svg";
 import styled from "styled-components";
 import { useState } from "react";
 
+/**
+ * Header component
+ * @param {*} props
+ * @returns
+ */
 export default function Header(props) {
   // styled-component
   const DivProfil = styled.div`
@@ -19,7 +24,7 @@ export default function Header(props) {
       cursor: pointer;
     }
   `;
-  // Hook useStat : déclare une variable d'état useState pour l'ID. La valeur par défaut est 12.
+  // Hook useStat : declares a state variable setState for the ID. The default value is 12.
   let {
     id: [userId, setUserId],
   } = {

@@ -17,7 +17,11 @@ function formatPolarAxis(value) {
   return value;
 }
 
-// TODO : bug cf console
+/**
+ * RadarChart component using Recharts
+ * @param {*} data
+ * @returns
+ */
 function Radarchart(data) {
   return (
     <div id="radarchart" className="card">

@@ -4,6 +4,11 @@ import { useContext } from "react/cjs/react.development";
 
 import { PieChart, Pie } from "recharts";
 
+/**
+ * PieChart component using Recharts
+ * @param {*} data
+ * @returns
+ */
 function Piechart(data) {
   console.log(data);
   const pieChartMainData = data.data.todayScore * 100 || data.data.score * 100;

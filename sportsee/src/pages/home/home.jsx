@@ -21,7 +21,10 @@ import RadarChart from "../../components/Charts/RadarChart";
 import RadialChart from "../../components/Charts/RadialChart";
 import { UserContext } from "../../utils/context";
 
-// Component
+/**
+ * Home page component
+ * @returns
+ */
 function Home() {
   // Get user data
   const userData = useContext(UserContext),

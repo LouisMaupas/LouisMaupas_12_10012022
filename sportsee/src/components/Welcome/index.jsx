@@ -1,10 +1,8 @@
-// import style from "./style.css"
-
+/**
+ * Welcome component
+ * @param {*} userName
+ * @returns
+ */
 export default function Welcome(userName) {
-
-  return (
-    <div>
-     Bonjour {userName.userName}
-    </div>
-  )
+  return <div>Bonjour {userName.userName}</div>;
 }
