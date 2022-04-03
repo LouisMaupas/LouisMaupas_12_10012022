@@ -14,20 +14,24 @@
     </p>
     <h2>Etapes d’installation</h2>
     <p>
-    1. Get backend at [https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
+    1. Get backend at [https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard]
+    
     2. Clone the repo
     ```sh
     git clone https://github.com/LouisMaupas/LouisMaupas_12_10012022.git
     ```
+
     3. Install NPM packages
     ```sh
     npm install
     ```
+
     4. Enter API url in `index.jsx`
     ```js
     const url = `http://localhost:3000`,
     ```
     </p>
+
     <h3>Available Scripts</h3>
     <p>
         ### `npm run start`
@@ -36,4 +40,5 @@
         The page will reload when you make changes.
         You may also see any lint errors in the console.
     </p>
+
 </div>
