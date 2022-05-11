@@ -27,16 +27,18 @@ function BarChartComponent(data) {
   `;
   //
   const StyledTooltip = styled.div`
+    width: 40px;
+    height: 60px;
+    color: white;
+    font-size: 8px;
+    font-weight: normal;
     background-color: red;
-    color: #fff;
-    font-size: 0.5em;
-    text-align: center;
-    height: 63px;
-    min-width: 39px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    span {
+      text-align: center;
+    }
   `;
 
   /**
@@ -48,8 +50,8 @@ function BarChartComponent(data) {
     if (active) {
       return (
         <StyledTooltip>
-          <p>{`${payload[0].value}kg`}</p>
-          <p>{`${payload[1].value}kCal`}</p>
+          <span>{`${payload[0].value}kg`}</span>
+          <span>{`${payload[1].value}kCal`}</span>
         </StyledTooltip>
       );
     }
@@ -64,8 +66,11 @@ function BarChartComponent(data) {
         <BarChart width="100%" data={barChartMainData} barSize={7} barGap={8}>
           <CartesianGrid vertical={false} strokeDasharray="3 3" />
           <Tooltip
-            content={<tooltip />}
-            cursor={{ stroke: "rgba(224,224,224,0.3)" }}
+            content={<Tooltip />}
+            cursor={{
+              stroke: "grey",
+              strokeWidth: 0,
+            }}
           />
 
           <Legend

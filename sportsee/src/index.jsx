@@ -12,6 +12,9 @@ render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/user/:id" element={<App />}></Route>
+      <Route path="/user/:id/:chart" element={<App />}></Route>
+      {/* verifier si la variable est bien un mot autorisé sinon 404 ;
+       si chart = activity on affiche activity si chart = null on affiche tous les graphiques */}
       <Route
         path="*"
         element={

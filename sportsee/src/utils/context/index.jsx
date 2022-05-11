@@ -9,7 +9,6 @@ const UserContext = React.createContext();
  * @returns
  */
 function UsersDataProvider(props) {
-  console.log("props du provider = " + props.id);
   const [userAccount, setUserAccount] = useState(12);
   const [userActivity, setUserActivity] = useState([]);
   const [userAverageSessions, setUserAverageSessions] = useState([]);

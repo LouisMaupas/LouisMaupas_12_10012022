@@ -5,45 +5,55 @@ import {
   PolarGrid,
   PolarAngleAxis,
   PolarRadiusAxis,
+  ResponsiveContainer,
 } from "recharts";
-
-function formatPolarAxis(value) {
-  if (value === 1) return "Intensité";
-  if (value === 2) return "Vitesse";
-  if (value === 3) return "Force";
-  if (value === 4) return "Endurance";
-  if (value === 5) return "Energie";
-  if (value === 6) return "Cardio";
-  return value;
-}
 
 /**
  * RadarChart component using Recharts
  * @param {*} data
  * @returns
  */
-function Radarchart(data) {
+function Radarchart({ data }) {
+  let chartData = [];
+  function formatPolarAxis(values) {
+    const mappingkinds = {
+      1: "Cardio",
+      2: "Energie",
+      3: "Endurance",
+      4: "Force",
+      5: "Vitesse",
+      6: "Intensité",
+    };
+    chartData = data.map((element) => {
+      return {
+        value: element.value,
+        kind: mappingkinds[element.kind],
+      };
+    });
+  }
+
+  if (data !== undefined) {
+    formatPolarAxis(data);
+  }
+
   return (
-    <div id="radarchart" className="card">
+    <ResponsiveContainer width="31%" height={230}>
       <RadarChart
-        cx="50%"
-        cy="50%"
-        outerRadius="70%"
-        width={248}
-        height={255}
-        data={data}
-        startAngle={30}
-        endAngle={-330}
+        outerRadius={48}
+        data={chartData}
+        style={{ background: "#282D30", borderRadius: "5px", fill: "#FFF" }}
       >
-        <PolarGrid />
-        <PolarAngleAxis dataKey="kind" fontSize="12" color="white" />
-        {/* <PolarAngleAxis stroke="#fff" tickLine={false}
-         tick={{ fontSize: 10 }} dataKey="kind" 
-         tickFormatter={formatPolarAxis} color="blue" /> */}
-        <PolarRadiusAxis />
-        <Radar dataKey="value" stroke="white" fill="red" fillOpacity={0.6} />
+        <PolarGrid radialLines={false} />
+        <PolarAngleAxis dataKey="kind" style={{ fontSize: "12px" }} />
+        <PolarRadiusAxis angle={30} domain={[0, 150]} tick={false} />
+        <Radar
+          dataKey="value"
+          legendType={"none"}
+          fill="#FF0101"
+          fillOpacity={0.7}
+        />
       </RadarChart>
-    </div>
+    </ResponsiveContainer>
   );
 }
 
