@@ -36,7 +36,7 @@ export default function Header(props) {
     <header>
       <nav>
         <ul>
-          <img src={logo}></img>
+          <img src={logo} alt={'logo'}></img>
           <li>
             <Link to="/">Accueil</Link>
           </li>

@@ -35,21 +35,28 @@ function Home() {
 
   // styled-component
   const HomeLabel = styled.div`
-    margin-left: 109px;
-    margin-top: 68px;
+    width: 100%;
   `;
   const ChartsContainer = styled.div`
-    margin-right: 63px;
+
   `;
+  const MainDataContainer = styled.div`
+    display: flex;
+    justify-content: space-around;
+  `;
+
+
+
+
   return (
     <HomeLabel>
       <div>
-        <Welcome
-          userName={userAccount.id ? userAccount.userInfos.firstName : null}
-        ></Welcome>
-        <DailyMotivation></DailyMotivation>
+        <Welcome userName={userAccount.id ? userAccount.userInfos.firstName : null}>
+
+        </Welcome>
+        <DailyMotivation />
       </div>
-      <div className="d-flex">
+      <MainDataContainer className="d-flex justify">
         <ChartsContainer>
           <BarChart data={userActivity}></BarChart>
           <div className="d-flex justify-content-between">
@@ -59,7 +66,6 @@ function Home() {
           </div>
         </ChartsContainer>
         <div>
-          {/* TODO ajouter une classeName mb-3  */}
           <Card
             image={iconCalories}
             value={
@@ -87,7 +93,7 @@ function Home() {
             type={"Lipides"}
           ></Card>
         </div>
-      </div>
+      </MainDataContainer>
     </HomeLabel>
   );
 }

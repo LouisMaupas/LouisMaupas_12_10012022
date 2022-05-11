@@ -3,6 +3,7 @@ import Home from "./pages/home/home";
 import SideMenu from "./components/SideMenu";
 import index from "./index.css";
 import styled from "styled-components";
+import "./App.css"
 import React from "react";
 import ReactDOM from "react-dom";
 import { UsersDataProvider } from "./utils/context/index";
@@ -21,7 +22,7 @@ export default function App() {
   return (
     <UsersDataProvider id={userId}>
       <Header state={{ id: [userId, setUserId] }} />
-      <div className="d-flex">
+      <div className="d-flex main-display">
         <SideMenu></SideMenu>
         <Home></Home>
       </div>
