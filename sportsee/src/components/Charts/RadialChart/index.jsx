@@ -31,22 +31,22 @@ function Piechart(data) {
   ];
 
   return (
-    // <ResponsiveContainer>
-    <PieChart width={200} height={250}>
-      <Pie
-        startAngle={startangle}
-        endAngle={endangle}
-        data={data02}
-        dataKey="value"
-        nameKey="name"
-        cx="50%"
-        cy="40%"
-        fill="red"
-        innerRadius={60}
-        label={false}
-      />
-    </PieChart>
-    // </ResponsiveContainer>
+    <ResponsiveContainer>
+      <PieChart width={200} height={250}>
+        <Pie
+          startAngle={startangle}
+          endAngle={endangle}
+          data={data02}
+          dataKey="value"
+          nameKey="name"
+          cx="50%"
+          cy="40%"
+          fill="red"
+          innerRadius={60}
+          label={false}
+        />
+      </PieChart>
+    </ResponsiveContainer>
   );
 }
 

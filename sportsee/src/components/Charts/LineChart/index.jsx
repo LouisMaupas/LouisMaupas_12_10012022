@@ -56,12 +56,11 @@ function CustomTooltip({ payload, active }) {
  * @returns
  */
 function LinechartComponent(props) {
-  //change the days of the data to be more explicit with the letters of the days
+  // Map number to days
   const dates = ["L", "M", "M", "J", "V", "S", "D"],
     data = props.data;
-  // data.map((date) => (date.day = dates[date.day - 1]));
-
   if (!props) return null;
+  if (data) data.map((date) => (date.day = dates[date.day - 1]));
 
   return (
     <ResponsiveContainer>

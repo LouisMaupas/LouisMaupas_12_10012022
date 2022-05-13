@@ -20,6 +20,13 @@ import styled from "styled-components";
  */
 function BarChartComponent(data) {
   const barChartMainData = data.data.sessions;
+  // map dates to numbers
+  if (barChartMainData) {
+    barChartMainData.map((date, index) => {
+      date.day = index + 1;
+    });
+  }
+
   // styles
   const BarChartBackground = styled.div`
     background-color: #fbfbfb;
