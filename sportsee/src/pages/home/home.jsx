@@ -37,23 +37,18 @@ function Home() {
   const HomeLabel = styled.div`
     width: 100%;
   `;
-  const ChartsContainer = styled.div`
-
-  `;
+  const ChartsContainer = styled.div``;
   const MainDataContainer = styled.div`
     display: flex;
     justify-content: space-around;
   `;
 
-
-
-
   return (
     <HomeLabel>
       <div>
-        <Welcome userName={userAccount.id ? userAccount.userInfos.firstName : null}>
-
-        </Welcome>
+        <Welcome
+          userName={userAccount.id ? userAccount.userInfos.firstName : null}
+        />
         <DailyMotivation />
       </div>
       <MainDataContainer className="d-flex justify">
