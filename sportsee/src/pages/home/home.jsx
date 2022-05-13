@@ -35,12 +35,14 @@ function Home() {
 
   // styled-component
   const HomeLabel = styled.div`
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
     width: 100%;
   `;
   const ChartsContainer = styled.div``;
   const MainDataContainer = styled.div`
     display: flex;
-    justify-content: space-around;
   `;
 
   return (
@@ -50,8 +52,7 @@ function Home() {
           userName={userAccount.id ? userAccount.userInfos.firstName : null}
         />
         <DailyMotivation />
-      </div>
-      <MainDataContainer className="d-flex justify">
+
         <ChartsContainer>
           <BarChart data={userActivity}></BarChart>
           <div className="d-flex justify-content-between">
@@ -60,35 +61,31 @@ function Home() {
             <RadialChart data={userAccount}></RadialChart>
           </div>
         </ChartsContainer>
-        <div>
-          <Card
-            image={iconCalories}
-            value={
-              userAccount.keyData ? userAccount.keyData.calorieCount : null
-            }
-            type={"Calories"}
-          ></Card>
-          <Card
-            image={iconProtein}
-            value={
-              userAccount.keyData ? userAccount.keyData.carbohydrateCount : null
-            }
-            type={"Proteines"}
-          ></Card>
-          <Card
-            image={iconCarbs}
-            value={userAccount.keyData ? userAccount.keyData.lipidCount : null}
-            type={"Glucides"}
-          ></Card>
-          <Card
-            image={iconFat}
-            value={
-              userAccount.keyData ? userAccount.keyData.proteinCount : null
-            }
-            type={"Lipides"}
-          ></Card>
-        </div>
-      </MainDataContainer>
+      </div>
+      <div>
+        <Card
+          image={iconCalories}
+          value={userAccount.keyData ? userAccount.keyData.calorieCount : null}
+          type={"Calories"}
+        ></Card>
+        <Card
+          image={iconProtein}
+          value={
+            userAccount.keyData ? userAccount.keyData.carbohydrateCount : null
+          }
+          type={"Proteines"}
+        ></Card>
+        <Card
+          image={iconCarbs}
+          value={userAccount.keyData ? userAccount.keyData.lipidCount : null}
+          type={"Glucides"}
+        ></Card>
+        <Card
+          image={iconFat}
+          value={userAccount.keyData ? userAccount.keyData.proteinCount : null}
+          type={"Lipides"}
+        ></Card>
+      </div>
     </HomeLabel>
   );
 }
