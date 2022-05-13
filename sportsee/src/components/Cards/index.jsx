@@ -5,12 +5,13 @@ import PropTypes from "prop-types";
 const CardLabel = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background: #fbfbfb;
-  width: 258px;
+  width: 195px;
   height: 124px;
   border-radius: 5px;
   margin-bottom: 39px;
+  padding: 0 0.75rem;
   > div .card__value {
     font-weight: bold;
     font-size: 20px;
