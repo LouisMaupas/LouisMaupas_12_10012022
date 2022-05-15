@@ -7,3 +7,7 @@
     transform: rotate(-90deg);
     font-size: 12px;
 }
+
+ul {
+    padding: 0;
+}

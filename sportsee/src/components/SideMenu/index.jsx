@@ -13,7 +13,7 @@ export default function SideMenu() {
   return (
     <div className="side-menu d-flex flex-column justify-content-between">
       <div></div>
-      <ul>
+      <ul className="d-flex flex-column align-items-center">
         <li>
           <img src={logo_yoga}></img>
         </li>
