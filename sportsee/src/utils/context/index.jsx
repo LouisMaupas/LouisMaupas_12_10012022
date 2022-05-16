@@ -1,5 +1,6 @@
 import data from "../../backend/data_mocked";
 import React, { useContext, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const UserContext = React.createContext();
 
@@ -9,21 +10,27 @@ const UserContext = React.createContext();
  * @returns
  */
 function UsersDataProvider(props) {
-  const [userAccount, setUserAccount] = useState(12);
+  // returns an object of key/value pairs of URL parameters. Use it to access match.params of the current <Route>
+  const { id } = useParams();
+
+  // get DATA
+  const [userAccount, setUserAccount] = useState(id);
   const [userActivity, setUserActivity] = useState([]);
   const [userAverageSessions, setUserAverageSessions] = useState([]);
   const [userPerformance, setUserPerformance] = useState([]);
+  const [items, setItems] = useState([]);
 
   /**
    * Call API with axios (https://github.com/axios/axios)
    * Make a request for a user with a given ID
    */
   useEffect(() => {
-    let userId = 12;
-    if (props.id === undefined) {
+    let userId = 120;
+    if (id === undefined) {
       userId = 12;
     } else {
-      userId = props.id;
+      userId = id;
+      localStorage.setItem("userId", JSON.stringify(userId));
     }
 
     const url = `http://localhost:3000`,
