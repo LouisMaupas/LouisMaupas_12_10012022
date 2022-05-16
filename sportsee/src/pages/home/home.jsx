@@ -1,6 +1,7 @@
 // React
 import React, { useState, useEffect } from "react";
 import { useContext } from "react/cjs/react.development";
+import AllCards from "../../components/AllCards/AllCards";
 
 // Ext
 import styled from "styled-components";
@@ -20,6 +21,7 @@ import LineChart from "../../components/Charts/LineChart";
 import RadarChart from "../../components/Charts/RadarChart";
 import RadialChart from "../../components/Charts/RadialChart";
 import { UserContext } from "../../utils/context";
+import { Link } from "react-router-dom";
 
 /**
  * Home page component
@@ -52,17 +54,36 @@ function Home() {
           userName={userAccount.id ? userAccount.userInfos.firstName : null}
         />
         <DailyMotivation />
-
         <ChartsContainer>
-          <BarChart data={userActivity}></BarChart>
+          <Link to={`/user/${userAccount.id}/activity`}>
+            <BarChart data={userActivity} />
+          </Link>
           <div className="d-flex justify-content-between">
-            <LineChart data={userAverageSessions}></LineChart>
-            <RadarChart data={userPerformance}></RadarChart>
-            <RadialChart data={userAccount}></RadialChart>
+            <Link to={`/user/${userAccount.id}/average-sessions`}>
+              <LineChart data={userAverageSessions} />
+            </Link>
+            <Link to={`/user/${userAccount.id}/activities`}>
+              <RadarChart data={userPerformance} />
+            </Link>
+            {/* FIXME INFINITE LOOP */}
+            {/* <Link to={`/user/${userAccount.id}/today-score`}>
+              <RadialChart data={userAccount}></RadialChart>
+            </Link> */}
           </div>
         </ChartsContainer>
       </div>
       <div>
+        {/* {userAccount.keyData ? ( // FIXME boucle infinie
+          <AllCards
+            iconCalories={iconCalories}
+            iconCarbs={iconCarbs}
+            iconFat={iconFat}
+            iconProtein={iconProtein}
+            userAccount={userAccount}
+          />
+        ) : (
+          <></>
+        )} */}
         <Card
           image={iconCalories}
           value={userAccount.keyData ? userAccount.keyData.calorieCount : null}
