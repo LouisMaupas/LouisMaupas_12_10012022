@@ -59,8 +59,9 @@ function LinechartComponent(props) {
   // Map number to days
   const dates = ["L", "M", "M", "J", "V", "S", "D"],
     data = props.data;
-  if (!props) return null;
-  if (data) data.map((date) => (date.day = dates[date.day - 1]));
+  if (data !== undefined) {
+    data.map((date) => (date.day = dates[date.day - 1]));
+  }
 
   return (
     <ResponsiveContainer>
@@ -83,16 +84,16 @@ function LinechartComponent(props) {
             />
             <Tooltip
               viewBox={{ x: 10, y: 50, width: 4000, height: 400 }}
-              // cursor={{ stroke: "rgba(236,61,61, 0.6)", strokeWidth: 50 }}
-              // wrapperStyle={{
-              //   width: 40,
-              //   height: 25,
-              //   fontSize: 10,
-              //   backgroundColor: "#FFF",
-              //   display: "flex",
-              //   justifyContent: "center",
-              //   alignItems: "center",
-              // }}
+              cursor={{ stroke: "rgba(236,61,61, 0.6)", strokeWidth: 50 }}
+              wrapperStyle={{
+                width: 40,
+                height: 25,
+                fontSize: 10,
+                backgroundColor: "#FFF",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
               content={<CustomTooltip />}
             />
           </LineChart>

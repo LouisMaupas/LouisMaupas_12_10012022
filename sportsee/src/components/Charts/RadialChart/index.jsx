@@ -29,24 +29,30 @@ function Piechart(data) {
       value: 9800,
     },
   ];
-
   return (
-    <ResponsiveContainer>
-      <PieChart width={200} height={250}>
-        <Pie
-          startAngle={startangle}
-          endAngle={endangle}
-          data={data02}
-          dataKey="value"
-          nameKey="name"
-          cx="50%"
-          cy="40%"
-          fill="red"
-          innerRadius={60}
-          label={false}
-        />
-      </PieChart>
-    </ResponsiveContainer>
+    <>
+      <ResponsiveContainer>
+        <PieChart width={200} height={250}>
+          <Pie
+            startAngle={startangle}
+            endAngle={endangle}
+            data={score}
+            dataKey="value"
+            nameKey="name"
+            cx="50%"
+            cy="40%"
+            fill="red"
+            innerRadius={60}
+            // outerRadius={100}
+            label={false}
+          />
+        </PieChart>
+      </ResponsiveContainer>
+      <div id="result">
+        <p id="resultscore">{score.value}%</p>
+        <p>de votre objectif</p>
+      </div>
+    </>
   );
 }
 
@@ -55,7 +61,7 @@ export default Piechart;
 /*
 
       <div id="score-title">Score</div>
-      <PieChart width={258} height={263}>
+      <PieChart width={200} height={263}>
         <Pie
           data={score.score}
           dataKey="score"
@@ -69,7 +75,7 @@ export default Piechart;
         />
       </PieChart>
       <div id="result">
-        <p id="resultscore">{score.score}%</p>
+        <p id="resultscore">{score.value}%</p>
         <p>de votre objectif</p>
       </div>
 */
