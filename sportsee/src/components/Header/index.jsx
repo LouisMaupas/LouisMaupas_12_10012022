@@ -8,7 +8,6 @@ import style from "./style.css";
 import logo from "../../img/logo.svg";
 
 import styled from "styled-components";
-import { useState } from "react";
 
 /**
  * Header component
@@ -24,29 +23,17 @@ export default function Header(props) {
       cursor: pointer;
     }
   `;
-  // Hook useStat : declares a state variable setState for the ID. The default value is 12.
-  let {
-    id: [userId, setUserId],
-  } = {
-    id: useState("12"),
-    ...props.state,
-  };
+
+  // get user Id from localstorage
+  const userId = JSON.parse(localStorage.getItem("userId"));
 
   return (
     <header>
       <nav>
         <ul>
-          <img src={logo} alt={'logo'}></img>
-          <li>
-            <Link to="/">Accueil</Link>
-          </li>
-          <li>
-            Profil : User {userId}
-            <div>
-              <DivProfil onClick={() => setUserId("12")}>User 12</DivProfil>
-              <DivProfil onClick={() => setUserId("18")}>User 18</DivProfil>
-            </div>
-          </li>
+          <img src={logo} alt={"logo"}></img>
+          <Link to={`/user/${userId}`}>Accueil</Link>
+          <li>Profil</li>
           <li>Réglage</li>
           <li>Communauté</li>
         </ul>
