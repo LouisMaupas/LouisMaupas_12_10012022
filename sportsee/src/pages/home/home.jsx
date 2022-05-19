@@ -1,7 +1,7 @@
 // React
 import React, { useState, useEffect } from "react";
 import { useContext } from "react/cjs/react.development";
-import AllCards from "../../components/AllCards/AllCards";
+// import AllCards from "./../components/AllCards/AllCards";
 
 // Ext
 import styled from "styled-components";
