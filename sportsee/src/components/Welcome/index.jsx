@@ -1,4 +1,12 @@
-import "./style.css";
+import styled from "styled-components";
+
+const WelcomeContainer = styled.div`
+  font-size: 2rem;
+  font-weight: bold;
+`;
+const WelcomeName = styled.div`
+  color: red;
+`;
 
 /**
  * Welcome component
@@ -7,8 +15,9 @@ import "./style.css";
  */
 export default function Welcome(userName) {
   return (
-    <div className="welcome">
-      Bonjour <span className="welcome__name">{userName.userName}</span>
-    </div>
+    <WelcomeContainer className="welcome">
+      Bonjour{" "}
+      <WelcomeName className="welcome__name">{userName.userName}</WelcomeName>
+    </WelcomeContainer>
   );
 }

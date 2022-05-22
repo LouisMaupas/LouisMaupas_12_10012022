@@ -64,7 +64,7 @@ function LinechartComponent(props) {
   }
 
   return (
-    <ResponsiveContainer>
+    <ResponsiveContainer width={"100%"}>
       <div id="line-chart" className="card">
         <WrapperDiv>
           <p>Durée moyenne des sessions</p>

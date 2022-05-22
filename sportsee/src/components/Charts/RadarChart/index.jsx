@@ -37,7 +37,7 @@ function Radarchart({ data }) {
   }
 
   return (
-    <ResponsiveContainer width="31%" height={230}>
+    <ResponsiveContainer width="100%" height={230}>
       <RadarChart
         outerRadius={48}
         data={chartData}

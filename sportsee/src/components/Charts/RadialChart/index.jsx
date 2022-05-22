@@ -1,81 +1,85 @@
-// React
-import React, { useState, useEffect } from "react";
-import { useContext } from "react/cjs/react.development";
-
-import { PieChart, Pie, ResponsiveContainer } from "recharts";
+import React from "react";
+import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
+import styled from "styled-components";
 
 /**
- * PieChart component using Recharts
- * @param {*} data
- * @returns
+ * This component returns a RadialBarChart graphic with user's score in percentage
+ * @param {object} data main Data
+ * @returns { React.ReactElement } a RadialBarChart
  */
-function Piechart(data) {
-  const pieChartMainData = data.data.todayScore * 100 || data.data.score * 100;
 
-  let score;
-  if (data !== undefined) {
-    score = {
-      name: "score",
-      value: pieChartMainData,
-    };
-  }
+const Score = (data) => {
+  const score = data.data ? data.data : "";
 
-  let startangle = 90,
-    endangle = startangle + score.value * 3.6;
-
-  const data02 = [
+  let scoreArray = [
     {
-      name: "Group D",
-      value: 9800,
+      uv: 1,
+      fill: "white",
+    },
+    {
+      uv: score.score ? score.score : score.todayScore,
+      fill: "#FF0101",
     },
   ];
+
+  const ScoreContainer = styled.div`
+    grid-area: 4 / 3 / 6 / 4;
+    background-color: #fbfbfb;
+    border-radius: 5px;
+    margin: 0px 35px 0px 0px;
+    position: relative;
+    z-index: -2;
+    height: 300px;
+  `;
+  const Score = styled.span`
+    position: absolute;
+    margin-left: 25px;
+    margin-top: 15px;
+    font-size: 0.9em;
+  `;
+  const ScoreText = styled.span`
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 100;
+    text-align: center;
+    font-size: 0.9em;
+  `;
+  const spanScoreText = styled.span`
+    font-size: 1.7em;
+    font-weight: bold;
+  `;
+
   return (
-    <>
-      <ResponsiveContainer>
-        <PieChart width={200} height={250}>
-          <Pie
-            startAngle={startangle}
-            endAngle={endangle}
-            data={score}
-            dataKey="value"
-            nameKey="name"
-            cx="50%"
-            cy="40%"
-            fill="red"
-            innerRadius={60}
-            // outerRadius={100}
-            label={false}
-          />
-        </PieChart>
-      </ResponsiveContainer>
-      <div id="result">
-        <p id="resultscore">{score.value}%</p>
-        <p>de votre objectif</p>
-      </div>
-    </>
-  );
-}
-
-export default Piechart;
-
-/*
-
-      <div id="score-title">Score</div>
-      <PieChart width={200} height={263}>
-        <Pie
-          data={score.score}
-          dataKey="score"
-          startAngle={startangle}
-          endAngle={endangle}
+    <ScoreContainer>
+      <Score>Score</Score>
+      <ScoreText>
+        <span>
+          {score.score ? score.score * 100 + "%" : score.todayScore * 100 + "%"}
+        </span>{" "}
+        de votre objectif
+      </ScoreText>
+      <ResponsiveContainer width="100%" height="100%">
+        <RadialBarChart
           cx="50%"
           cy="50%"
-          innerRadius={80}
-          outerRadius={90}
-          fill="red"
-        />
-      </PieChart>
-      <div id="result">
-        <p id="resultscore">{score.value}%</p>
-        <p>de votre objectif</p>
-      </div>
-*/
+          innerRadius="80%"
+          outerRadius="80%"
+          barSize={10}
+          data={scoreArray}
+          startAngle={90}
+          endAngle={450}
+        >
+          <RadialBar dataKey="uv" cornerRadius={10} />
+        </RadialBarChart>
+      </ResponsiveContainer>
+    </ScoreContainer>
+  );
+};
+
+export default Score;

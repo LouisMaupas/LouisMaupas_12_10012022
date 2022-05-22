@@ -77,8 +77,7 @@ function BarChartComponent() {
     return (
       <BarChartBackground>
         <div>Activité quotidienne</div>
-
-        <ResponsiveContainer minWidth={700} width="100%" height={320}>
+        <ResponsiveContainer minWidth={700} width="100%" height={250}>
           <BarChart width="100%" data={barChartMainData} barSize={7} barGap={8}>
             <CartesianGrid vertical={false} strokeDasharray="3 3" />
             <Tooltip
