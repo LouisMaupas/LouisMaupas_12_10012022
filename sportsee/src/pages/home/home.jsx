@@ -20,8 +20,10 @@ import BarChart from "../../components/Charts/BarChart";
 import LineChart from "../../components/Charts/LineChart";
 import RadarChart from "../../components/Charts/RadarChart";
 import RadialChart from "../../components/Charts/RadialChart";
+import AllCards from "../../components/AllCards/AllCards";
 import { UserContext } from "../../utils/context";
 import { Link } from "react-router-dom";
+import style from "./home.css";
 
 /**
  * Home page component
@@ -39,10 +41,12 @@ function Home() {
   const HomeLabel = styled.div`
     display: flex;
     justify-content: space-around;
-    margin-top: 2rem;
+    padding-top: 2rem;
     width: 100%;
   `;
-  const ChartsContainer = styled.div``;
+  const ChartsContainer = styled.div`
+    width: 100%;
+  `;
   const MainDataContainer = styled.div`
     display: flex;
   `;
@@ -59,53 +63,41 @@ function Home() {
             <BarChart data={userActivity} />
           </Link>
           <div className="d-flex justify-content-between">
-            <Link to={`/user/${userAccount.id}/average-sessions`}>
+            <Link
+              className="link--chart"
+              to={`/user/${userAccount.id}/average-sessions`}
+            >
               <LineChart data={userAverageSessions} />
             </Link>
-            <Link to={`/user/${userAccount.id}/activities`}>
+            <Link
+              className="link--chart"
+              to={`/user/${userAccount.id}/activities`}
+            >
               <RadarChart data={userPerformance} />
             </Link>
-            {/* FIXME INFINITE LOOP */}
-            {/* <Link to={`/user/${userAccount.id}/today-score`}>
-              <RadialChart data={userAccount}></RadialChart>
-            </Link> */}
+            <Link
+              className="link--chart"
+              to={`/user/${userAccount.id}/today-score`}
+            >
+              <RadialChart data={userAccount} />
+            </Link>
           </div>
         </ChartsContainer>
       </div>
       <div>
-        {/* {userAccount.keyData ? ( // FIXME boucle infinie
-          <AllCards
-            iconCalories={iconCalories}
-            iconCarbs={iconCarbs}
-            iconFat={iconFat}
-            iconProtein={iconProtein}
-            userAccount={userAccount}
-          />
+        {userAccount.keyData ? (
+          <Link to={`/user/${userAccount.id}/key-data`}>
+            <AllCards
+              iconCalories={iconCalories}
+              iconCarbs={iconCarbs}
+              iconFat={iconFat}
+              iconProtein={iconProtein}
+              userAccount={userAccount}
+            />
+          </Link>
         ) : (
           <></>
-        )} */}
-        <Card
-          image={iconCalories}
-          value={userAccount.keyData ? userAccount.keyData.calorieCount : null}
-          type={"Calories"}
-        ></Card>
-        <Card
-          image={iconProtein}
-          value={
-            userAccount.keyData ? userAccount.keyData.carbohydrateCount : null
-          }
-          type={"Proteines"}
-        ></Card>
-        <Card
-          image={iconCarbs}
-          value={userAccount.keyData ? userAccount.keyData.lipidCount : null}
-          type={"Glucides"}
-        ></Card>
-        <Card
-          image={iconFat}
-          value={userAccount.keyData ? userAccount.keyData.proteinCount : null}
-          type={"Lipides"}
-        ></Card>
+        )}
       </div>
     </HomeLabel>
   );
