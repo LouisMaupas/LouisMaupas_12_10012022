@@ -11,6 +11,13 @@ import { useState, useContext } from "react";
 import { UserContext } from "./utils/context/index";
 import BarChart from "./components/Charts/BarChart/index";
 import LineChart from "./components/Charts/LineChart/index";
+import AllCards from "./components/AllCards/AllCards";
+import RadarChart from "./components/Charts/RadarChart";
+import RadialChart from "./components/Charts/RadialChart";
+import iconCalories from "./img/icon_calories.png";
+import iconCarbs from "./img/icon_carbs.png";
+import iconFat from "./img/icon_fat.png";
+import iconProtein from "./img/icon_protein.png";
 
 // styled-component
 const ContainerLabel = styled.div`
@@ -48,6 +55,7 @@ export default function App(access) {
           <Header state={{ id: [userId, setUserId] }} />
           <div className="d-flex main-display">
             <SideMenu></SideMenu>
+            <RadialChart data={userAccount} />
           </div>
         </UsersDataProvider>
       );
@@ -67,6 +75,7 @@ export default function App(access) {
           <Header state={{ id: [userId, setUserId] }} />
           <div className="d-flex main-display">
             <SideMenu></SideMenu>
+            <RadarChart data={userPerformance} />
           </div>
         </UsersDataProvider>
       );
@@ -76,6 +85,13 @@ export default function App(access) {
           <Header state={{ id: [userId, setUserId] }} />
           <div className="d-flex main-display">
             <SideMenu></SideMenu>
+            <AllCards
+              iconCalories={iconCalories}
+              iconCarbs={iconCarbs}
+              iconFat={iconFat}
+              iconProtein={iconProtein}
+              userAccount={userAccount}
+            />
           </div>
         </UsersDataProvider>
       );
