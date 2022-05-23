@@ -29,7 +29,7 @@ const Score = (data) => {
     margin: 0px 35px 0px 0px;
     position: relative;
     z-index: -2;
-    height: 300px;
+    height: 100%;
   `;
   const Score = styled.span`
     position: absolute;

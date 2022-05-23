@@ -56,67 +56,103 @@ function BarChartComponent() {
     }
   `;
 
+  const legendStyle = {
+    position: "absolute",
+    top: "22px",
+    fontSize: "0.7em",
+  };
+
   /**
    *
    * @param {*} param0
    * @returns
    */
-  function Tooltip({ active, payload }) {
-    if (active) {
+  const TooltipStyle = ({ payload }) => {
+    if (payload && payload.length) {
       return (
-        <StyledTooltip>
-          <span>{`${payload[0].value}kg`}</span>
-          <span>{`${payload[1].value}kCal`}</span>
-        </StyledTooltip>
+        <div
+          className="tooltip"
+          style={{
+            background: "#E60000",
+            padding: "15px 5px",
+            color: "white",
+          }}
+        >
+          <p>{payload[0].value}kg</p>
+          <p>{payload[1].value}Kcal</p>
+        </div>
       );
     }
     return null;
-  }
+  };
 
   if (userData && userData !== undefined) {
     return (
-      <BarChartBackground>
+      <div className="activities">
         <div>Activité quotidienne</div>
-        <ResponsiveContainer minWidth={700} width="100%" height={250}>
-          <BarChart width="100%" data={barChartMainData} barSize={7} barGap={8}>
-            <CartesianGrid vertical={false} strokeDasharray="3 3" />
-            <Tooltip
-              content={<Tooltip />}
-              cursor={{
-                stroke: "grey",
-                strokeWidth: 0,
-              }}
+        <ResponsiveContainer width="100%" minHeight={300} minWidth={500}>
+          <BarChart
+            width={500}
+            height={300}
+            data={barChartMainData}
+            margin={{
+              top: 85,
+              right: 30,
+              left: 20,
+              bottom: 15,
+            }}
+          >
+            <CartesianGrid
+              strokeDasharray="3 1"
+              // @ts-ignore
+              vertical=""
             />
-
-            <Legend
-              iconSize={8}
-              iconType="circle"
-              verticalAlign="top"
-              height={47}
+            <XAxis
+              padding={{ left: 12, right: 10 }}
+              tickSize={20}
+              tickLine={false}
+              tickFormatter={(number) => number + 1}
             />
-
-            <XAxis dataKey="day" />
-
-            <Bar
-              name="Poids(kg)"
-              yAxisId="right"
+            <YAxis
+              tickLine={false}
+              axisLine={false}
+              orientation="right"
               dataKey="kilogram"
-              radius={[3, 3, 0, 0]}
-              fill="#282D30"
+              domain={[60, 90]}
+              ticks={[60, 75, 90]}
+              yAxisId="rigth"
+              scale="auto"
+              allowDataOverflow={false}
+              allowDecimals={false}
             />
-            <YAxis hide yAxisId="left" />
-
+            <YAxis dataKey="calories" hide scale="auto" yAxisId="left" />
+            <Tooltip content={<TooltipStyle payload={[barChartMainData]} />} />
+            <Legend
+              verticalAlign="top"
+              align="right"
+              // @ts-ignore
+              wrapperStyle={legendStyle}
+              iconType="circle"
+            />
             <Bar
-              name="Calories brûlées (kCal)"
+              yAxisId="rigth"
+              dataKey="kilogram"
+              fill="#282D30"
+              radius={[3, 3, 0, 0]}
+              barSize={10}
+              name="Poids (kg)"
+            />
+            <Bar
               yAxisId="left"
               dataKey="calories"
-              radius={[3, 3, 0, 0]}
               fill="#E60000"
+              radius={[3, 3, 0, 0]}
+              barSize={10}
+              name="Calories brulées (kCal)"
             />
-            <YAxis yAxisId="right" orientation="right" stroke="#9B9EAC" />
           </BarChart>
         </ResponsiveContainer>
-      </BarChartBackground>
+      </div>
     );
   } else {
     return <p>Loading ...</p>;
