@@ -40,7 +40,11 @@ function BarChartComponent() {
     background-color: #fbfbfb;
     border-radius: 5px;
   `;
-  //
+
+  const ActivitiesTitle = styled.div`
+  color: black;
+`;
+
   const StyledTooltip = styled.div`
     width: 40px;
     height: 60px;
@@ -89,7 +93,7 @@ function BarChartComponent() {
   if (userData && userData !== undefined) {
     return (
       <div className="activities">
-        <div>Activité quotidienne</div>
+        <ActivitiesTitle>Activité quotidienne</ActivitiesTitle>
         <ResponsiveContainer width="100%" minHeight={300} minWidth={500}>
           <BarChart
             width={500}

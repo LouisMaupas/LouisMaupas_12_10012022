@@ -50,7 +50,7 @@ export default function Header(props) {
       <HeaderNav>
         <HeaderUl>
           <img src={logo} alt={"logo"}></img>
-          <Link to={`/user/${userId}`}>Accueil</Link>
+          <Link className="header__link" to={`/user/${userId}`}>Accueil</Link>
           <HeaderLi>Profil</HeaderLi>
           <HeaderLi>Réglage</HeaderLi>
           <HeaderLi>Communauté</HeaderLi>

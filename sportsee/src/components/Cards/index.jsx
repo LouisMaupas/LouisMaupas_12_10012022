@@ -15,9 +15,12 @@ const CardLabel = styled.div`
   > div .card__value {
     font-weight: bold;
     font-size: 20px;
+    color: black;
   }
   > div .card__type {
     font-size: 14px;
+    color: #74798C;
+;
   }
 `;
 
@@ -31,7 +34,7 @@ function Card({ image, value, type }) {
   return (
     <CardLabel>
       <div>
-        <img src={image}></img>
+        <img src={image} alt="icon" />
       </div>
       <div>
         <div className="card__value">
