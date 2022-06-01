@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-Recommended Node version v16.13.2.
+Recommended Node version v16.13.2.\
 We recommend using Visual Studio code
 
 ### `npm start`
