@@ -1,106 +1,110 @@
-import styled from "styled-components";
-import React, { PureComponent } from "react";
-import { useEffect, useState } from "react";
+import React from "react";
 import {
   LineChart,
   Line,
   XAxis,
-  YAxis,
-  CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
+  Legend,
 } from "recharts";
-
-/**Styled components */
-const WrapperDiv = styled.div`
-    width: 31%;
-    height: 230px;
-    p {
-      width: 100px;
-      font-size: 14px;
-      margin: 20px;
-      position: absolute;
-      z-index: 999;
-      color: #ffffff;
-      opacity: 0.5;
-    }
-  `,
-  StyledTooltip = styled.div`
-    width: 40px;
-    height: 25px;
-    color: black;
-    font-size: 8px;
-    font-weight: bold;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  `;
-
-/** Component for the linechart. It personnalises the tooltip */
-function CustomTooltip({ payload, active }) {
-  if (active) {
-    return (
-      <StyledTooltip>
-        <p className="label">{`${payload[0].value} min`}</p>
-      </StyledTooltip>
-    );
-  }
-  return null;
-}
+import style from "./style.css";
 
 /**
- * LineChart component using Recharts
- * @param {*} props
- * @returns
+ * This components display a LineChart with user's average sessions
+ * @param {object} data average sessions data
+ * @returns { React.ReactElement } LineChart
  */
-function LinechartComponent(props) {
-  // Map number to days
-  const dates = ["L", "M", "M", "J", "V", "S", "D"],
-    data = props.data;
-  if (data !== undefined) {
-    data.map((date) => (date.day = dates[date.day - 1]));
-  }
+
+const AverageSessions = (data) => {
+  const averageSessions = data.data ? data.data.sessions : "";
+  const legend = () => {
+    return (
+      <div
+        style={{ color: "white", margin: 20, marginBottom: 50, opacity: 0.7 }}
+      >
+        <p>Durée moyenne des sessions</p>
+      </div>
+    );
+  };
+
+  /**
+   * This function allow change the style of graphic tooltip, and add a paragraph for time of sessions, payload corresponds to "averageSessions"
+   * @param {any} payload is "averageSessions" variable
+   * @returns { ReactElement | null } time of sessions with units (min)
+   */
+
+  const TooltipStyle = ({ payload }) => {
+    if (payload && payload.length) {
+      // @ts-ignore
+      return (
+        <div
+          className="tooltip"
+          style={{
+            background: "white",
+            padding: "10px 5px",
+          }}
+        >
+          <p>{payload[0].value} min</p>
+        </div>
+      );
+    }
+    return null;
+  };
 
   return (
-    <ResponsiveContainer width={"100%"}>
-      <div id="line-chart" className="card">
-        <WrapperDiv>
-          <p>Durée moyenne des sessions</p>
-          <LineChart
-            margin={{ top: 40, right: 0, left: 0, bottom: 5 }}
-            width={230}
-            height={230}
-            data={data}
-            style={{ background: "#FF0000", borderRadius: "5px" }}
-          >
-            <Line type="monotone" dataKey="sessionLength" stroke="grey" />
-            <XAxis dataKey="day" />
-            <YAxis
-              hide={true}
-              type="number"
-              domain={["dataMin", "dataMax+15"]}
-            />
-            <Tooltip
-              viewBox={{ x: 10, y: 50, width: 4000, height: 400 }}
-              cursor={{ stroke: "rgba(236,61,61, 0.6)", strokeWidth: 50 }}
-              wrapperStyle={{
-                width: 40,
-                height: 25,
-                fontSize: 10,
-                backgroundColor: "#FFF",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-              content={<CustomTooltip />}
-            />
-          </LineChart>
-        </WrapperDiv>
-      </div>
-    </ResponsiveContainer>
+    <div className="average-sessions">
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart
+          onMouseMove={(e) => {
+            // console.log(e);
+            if (e.isTooltipActive === true) {
+              let div = document.querySelector(".average-sessions");
+              let windowWidth = div.clientWidth;
+              let percentage = Math.round(
+                (e.activeCoordinate.x / windowWidth) * 100
+              );
+              // @ts-ignore
+              div.style.background = `linear-gradient(90deg, rgba(255,0,0,1) ${percentage}%, rgba(175,0,0,1.5) ${percentage}%, rgba(175,0,0,1.5) 100%)`;
+            }
+          }}
+          width={500}
+          height={300}
+          data={averageSessions}
+          margin={{
+            top: 5,
+            right: 5,
+            left: 5,
+            bottom: 5,
+          }}
+        >
+          {/* <CartesianGrid strokeDasharray="3 3" horizontal="" vertical="" /> */}
+          <XAxis
+            dataKey="day"
+            axisLine={false}
+            tickLine={false}
+            tick={{ fill: "white", opacity: "0.7" }}
+            tickFormatter={(day) => {
+              const daysLetter = ["L", "M", "M", "J", "V", "S", "D"];
+              return daysLetter[day - 1];
+            }}
+            allowDataOverflow={false}
+          />
+          <Tooltip content={<TooltipStyle payload={[averageSessions]} />} />
+          <Legend content={legend} verticalAlign="top" />
+          <Line
+            type="natural"
+            dataKey="sessionLength"
+            stroke="#fff"
+            strokeWidth={2}
+            dot={false}
+            activeDot={{
+              stroke: "#fff",
+            }}
+          />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
-}
+};
 
-export default LinechartComponent;
+export default AverageSessions;
