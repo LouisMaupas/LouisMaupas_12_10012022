@@ -16,7 +16,7 @@ import style from "./style.css";
  */
 
 const AverageSessions = (data) => {
-  const averageSessions = data.data ? data.data.sessions : "";
+  const averageSessions = data.data ? data.data : "";
   const legend = () => {
     return (
       <div
@@ -63,19 +63,13 @@ const AverageSessions = (data) => {
               let percentage = Math.round(
                 (e.activeCoordinate.x / windowWidth) * 100
               );
-              // @ts-ignore
+              // Hoover background
               div.style.background = `linear-gradient(90deg, rgba(255,0,0,1) ${percentage}%, rgba(175,0,0,1.5) ${percentage}%, rgba(175,0,0,1.5) 100%)`;
             }
           }}
-          width={500}
-          height={300}
+          width="100%"
+          height="50%"
           data={averageSessions}
-          margin={{
-            top: 5,
-            right: 5,
-            left: 5,
-            bottom: 5,
-          }}
         >
           {/* <CartesianGrid strokeDasharray="3 3" horizontal="" vertical="" /> */}
           <XAxis

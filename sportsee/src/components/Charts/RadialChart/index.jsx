@@ -1,5 +1,6 @@
 import React from "react";
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
+import style from "./style.css";
 
 /**
  * This component returns a RadialBarChart graphic with user's score in percentage
@@ -30,10 +31,10 @@ const Score = (data) => {
         </span>{" "}
         de votre objectif
       </h3>
-      <ResponsiveContainer width={200} height={200}>
+      <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
           cx="50%"
-          cy="50%"
+          cy="55%"
           innerRadius="80%"
           outerRadius="80%"
           barSize={10}

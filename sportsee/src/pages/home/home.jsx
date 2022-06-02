@@ -41,7 +41,8 @@ function Home() {
   const HomeLabel = styled.div`
     display: flex;
     justify-content: space-around;
-    padding-top: 2rem;
+    padding: 2rem;
+    padding-left: 3rem;
     width: 100%;
   `;
   const ChartsContainer = styled.div`
@@ -51,9 +52,19 @@ function Home() {
     display: flex;
   `;
 
+  const MainDataContainerLeft = styled.div`
+    width: 80%;
+  `;
+
+  const MainDataContainerRight = styled.div`
+    width: 20%;
+    align-self: flex-end;
+    height: 80%;
+  `;
+
   return (
     <HomeLabel>
-      <div>
+      <MainDataContainerLeft>
         <Welcome
           userName={userAccount.id ? userAccount.userInfos.firstName : null}
         />
@@ -83,8 +94,8 @@ function Home() {
             </Link>
           </div>
         </ChartsContainer>
-      </div>
-      <div>
+      </MainDataContainerLeft>
+      <MainDataContainerRight>
         {userAccount.keyData ? (
           <Link to={`/user/${userAccount.id}/key-data`}>
             <AllCards
@@ -98,7 +109,7 @@ function Home() {
         ) : (
           <></>
         )}
-      </div>
+      </MainDataContainerRight>
     </HomeLabel>
   );
 }
