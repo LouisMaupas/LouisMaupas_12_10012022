@@ -1,6 +1,6 @@
 import React from "react";
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
-import style from "./style.css";
+import "./style.css";
 
 /**
  * This component returns a RadialBarChart graphic with user's score in percentage
