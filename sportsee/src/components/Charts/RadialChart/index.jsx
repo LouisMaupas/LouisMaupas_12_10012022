@@ -38,6 +38,7 @@ const Score = () => {
   const ScoreContainer = styled.div`
     ${doesTodayScorePage ? "width: 100%" : null}
   `;
+  if (!userData.isIdValid)return <p>404 user not found</p>
 
   return (
     <ScoreContainer className="score">

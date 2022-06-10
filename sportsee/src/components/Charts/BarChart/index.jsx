@@ -90,6 +90,7 @@ function BarChartComponent() {
     }
     return null;
   };
+  if (!userData.isIdValid)return <p>404 user not found</p>
 
   if (userData && userData !== undefined) {
     return (

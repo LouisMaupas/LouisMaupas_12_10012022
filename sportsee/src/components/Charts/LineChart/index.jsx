@@ -56,6 +56,7 @@ const AverageSessions = () => {
     }
     return null;
   };
+  if (!userData.isIdValid)return <p>404 user not found</p>
 
   return (
     <div className="average-sessions">

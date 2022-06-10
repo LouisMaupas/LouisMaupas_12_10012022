@@ -24,6 +24,7 @@ import AllCards from "../../components/AllCards/AllCards";
 import { UserContext } from "../../utils/context";
 import { Link } from "react-router-dom";
 import style from "./home.css";
+import { string } from "prop-types";
 
 /**
  * Home page component
@@ -68,7 +69,7 @@ function Home() {
     align-self: center;
     height: 80%;
   `;
-
+  if (!userData.isIdValid)return <p>404 user not found</p>
   return (
     <HomeLabel>
       <MainDataContainerLeft>

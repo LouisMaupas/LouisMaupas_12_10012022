@@ -43,7 +43,7 @@ function Radarchart() {
   if (data !== undefined) {
     formatPolarAxis(data);
   }
-
+  if (!userData.isIdValid)return <p>404 user not found</p>
   return (
     <ResponsiveContainer width="100%" height={230}>
       <RadarChart
