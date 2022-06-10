@@ -23,7 +23,7 @@ and follow the instructions.
 
 ### Change to the project directory 
 
-#### `cd .\LouisMaupas_12_10012022\`
+#### `cd .\LouisMaupas_12_10012022\sportsee`
 
 ### Install the project and packages
 
