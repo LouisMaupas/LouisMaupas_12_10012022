@@ -21,17 +21,16 @@ And follow the instructions.
 
 #### `git clone https://github.com/LouisMaupas/LouisMaupas_12_10012022.git`
 
-Clone the repo
+### Go in the project 
 
-### `cd .\LouisMaupas_12_10012022\`
+#### `cd .\LouisMaupas_12_10012022\`
 
-Go to LouisMaupas_12_10012022 
+### Install the project, the packages
 
-### `npm install`
+#### `npm install`
 
-Install NPM packages
+### Start frontend
 
-### `npm run start`
+#### `npm run start`
 
-Start frontend 
 
