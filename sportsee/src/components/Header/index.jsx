@@ -1,13 +1,12 @@
 // React
 import { Link } from "react-router-dom";
 
-// stylesheet
+// style
 import style from "./style.css";
+import styled from "styled-components";
 
 // img
 import logo from "../../img/logo.svg";
-
-import styled from "styled-components";
 
 /**
  * Header component
@@ -44,13 +43,14 @@ export default function Header(props) {
 
   // get user Id from localstorage
   const userId = JSON.parse(localStorage.getItem("userId"));
-
   return (
     <HeaderContainer>
       <HeaderNav>
         <HeaderUl>
           <img src={logo} alt={"logo"}></img>
-          <Link className="header__link" to={`/user/${userId}`}>Accueil</Link>
+          <Link className="header__link" to={`/user/${userId}`}>
+            Accueil
+          </Link>
           <HeaderLi>Profil</HeaderLi>
           <HeaderLi>Réglage</HeaderLi>
           <HeaderLi>Communauté</HeaderLi>

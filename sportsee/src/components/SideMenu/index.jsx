@@ -28,16 +28,16 @@ export default function SideMenu() {
       <div></div>
       <SideMenuUl className="d-flex flex-column align-items-center">
         <li>
-          <img src={logo_yoga}></img>
+          <img src={logo_yoga} alt="logo"></img>
         </li>
         <li>
-          <img src={logo_swim}></img>
+          <img src={logo_swim} alt="logo"></img>
         </li>
         <li>
-          <img src={logo_bike}></img>
+          <img src={logo_bike} alt="logo"></img>
         </li>
         <li>
-          <img src={logo_body}></img>
+          <img src={logo_body} alt="logo"></img>
         </li>
       </SideMenuUl>
       <SideMenuCopyright className="text-white">

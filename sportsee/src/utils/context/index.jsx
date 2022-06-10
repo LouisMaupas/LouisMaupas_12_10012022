@@ -12,7 +12,6 @@ const UserContext = React.createContext();
 function UsersDataProvider(props) {
   // returns an object of key/value pairs of URL parameters. Use it to access match.params of the current <Route>
   const { id } = useParams();
-
   // get DATA
   const [userAccount, setUserAccount] = useState(id);
   const [userActivity, setUserActivity] = useState([]);
@@ -36,18 +35,34 @@ function UsersDataProvider(props) {
     const url = `http://localhost:3000`,
       axios = require("axios");
 
+    /**
+     * Fetch user data
+     * @returns
+     */
     function getUserAccount() {
       return axios.get(`${url}/user/${userId}`);
     }
 
+    /**
+     * fetch user activity data
+     * @returns
+     */
     function getUserActivity() {
       return axios.get(`${url}/user/${userId}/activity`);
     }
 
+    /**
+     * fetch user average session data
+     * @returns
+     */
     function getUserAverageSessions() {
       return axios.get(`${url}/user/${userId}/average-sessions`);
     }
 
+    /**
+     * fetch user performance data
+     * @returns
+     */
     function getUserPerformance() {
       return axios.get(`${url}/user/${userId}/performance`);
     }

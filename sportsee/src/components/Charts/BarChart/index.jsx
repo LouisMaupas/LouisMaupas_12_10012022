@@ -11,11 +11,12 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+
 // Ext
 import styled from "styled-components";
 
 /**
- * BarChart component using Recharts
+ * BarChart component
  * @param {*} data
  * @returns
  */
@@ -42,8 +43,8 @@ function BarChartComponent() {
   `;
 
   const ActivitiesTitle = styled.div`
-  color: black;
-`;
+    color: black;
+  `;
 
   const StyledTooltip = styled.div`
     width: 40px;
@@ -67,7 +68,7 @@ function BarChartComponent() {
   };
 
   /**
-   *
+   * Tooltip
    * @param {*} param0
    * @returns
    */
@@ -106,11 +107,7 @@ function BarChartComponent() {
               bottom: 15,
             }}
           >
-            <CartesianGrid
-              strokeDasharray="3 1"
-              // @ts-ignore
-              vertical=""
-            />
+            <CartesianGrid strokeDasharray="3 1" vertical="" />
             <XAxis
               padding={{ left: 12, right: 10 }}
               tickSize={20}
@@ -134,7 +131,6 @@ function BarChartComponent() {
             <Legend
               verticalAlign="top"
               align="right"
-              // @ts-ignore
               wrapperStyle={legendStyle}
               iconType="circle"
             />

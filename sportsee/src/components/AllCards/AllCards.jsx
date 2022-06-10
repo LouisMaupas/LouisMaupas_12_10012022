@@ -1,8 +1,8 @@
-// TODO si on passe par l'URL chart/... alors on flex row ?
 import Card from "../Cards/index";
 import styled from "styled-components";
 
 function AllCards({
+  /** AllCards component */
   iconCalories,
   iconCarbs,
   iconFat,

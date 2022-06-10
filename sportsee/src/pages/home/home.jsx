@@ -56,19 +56,28 @@ function Home() {
     width: 80%;
   `;
 
+  const MainDataContainerLeftTop = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  `;
+
   const MainDataContainerRight = styled.div`
     width: 20%;
-    align-self: flex-end;
+    align-self: center;
     height: 80%;
   `;
 
   return (
     <HomeLabel>
       <MainDataContainerLeft>
-        <Welcome
-          userName={userAccount.id ? userAccount.userInfos.firstName : null}
-        />
-        <DailyMotivation />
+        <MainDataContainerLeftTop>
+          <Welcome
+            userName={userAccount.id ? userAccount.userInfos.firstName : null}
+          />
+          <DailyMotivation />
+        </MainDataContainerLeftTop>
+
         <ChartsContainer>
           <Link to={`/user/${userAccount.id}/activity`}>
             <BarChart data={userActivity} />

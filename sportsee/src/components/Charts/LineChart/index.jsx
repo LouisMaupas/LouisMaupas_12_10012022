@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   LineChart,
   Line,
@@ -7,16 +7,23 @@ import {
   ResponsiveContainer,
   Legend,
 } from "recharts";
+import { UserContext } from "../../../utils/context/index";
 import style from "./style.css";
 
 /**
- * This components display a LineChart with user's average sessions
+ * LineChart component
  * @param {object} data average sessions data
  * @returns { React.ReactElement } LineChart
  */
 
-const AverageSessions = (data) => {
-  const averageSessions = data.data ? data.data : "";
+const AverageSessions = () => {
+  const userData = useContext(UserContext);
+  let averageSessions;
+  let data;
+  if (userData && userData.userAverageSessions.constructor === Object) {
+    averageSessions = userData.userAverageSessions;
+    data = averageSessions.sessions;
+  }
   const legend = () => {
     return (
       <div
@@ -28,14 +35,13 @@ const AverageSessions = (data) => {
   };
 
   /**
-   * This function allow change the style of graphic tooltip, and add a paragraph for time of sessions, payload corresponds to "averageSessions"
-   * @param {any} payload is "averageSessions" variable
+   * Tooltip style + add a paragraph for time of sessions, payload corresponds to "averageSessions"
+   * @param {any} payload "averageSessions" variable
    * @returns { ReactElement | null } time of sessions with units (min)
    */
 
   const TooltipStyle = ({ payload }) => {
     if (payload && payload.length) {
-      // @ts-ignore
       return (
         <div
           className="tooltip"
@@ -56,7 +62,6 @@ const AverageSessions = (data) => {
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           onMouseMove={(e) => {
-            // console.log(e);
             if (e.isTooltipActive === true) {
               let div = document.querySelector(".average-sessions");
               let windowWidth = div.clientWidth;
@@ -69,9 +74,8 @@ const AverageSessions = (data) => {
           }}
           width="100%"
           height="50%"
-          data={averageSessions}
+          data={data}
         >
-          {/* <CartesianGrid strokeDasharray="3 3" horizontal="" vertical="" /> */}
           <XAxis
             dataKey="day"
             axisLine={false}

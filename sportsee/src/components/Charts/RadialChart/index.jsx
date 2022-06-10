@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
+import { UserContext } from "../../../utils/context/index";
 import "./style.css";
+import styled from "styled-components";
 
 /**
- * This component returns a RadialBarChart graphic with user's score in percentage
+ * RadialChart component
  * @param {object} data main Data
  * @returns { React.ReactElement } a RadialBarChart
  */
-
-const Score = (data) => {
-  const score = data.data ? data.data : "";
+const Score = () => {
+  const userData = useContext(UserContext);
+  let data;
+  if (userData.userAccount.todayScore !== undefined) {
+    data = userData.userAccount.todayScore;
+  }
+  const score = data ? data : "";
 
   let scoreArray = [
     {
@@ -17,19 +23,27 @@ const Score = (data) => {
       fill: "white",
     },
     {
-      uv: score.score ? score.score : score.todayScore,
+      uv: score ? score : null,
       fill: "#FF0101",
     },
   ];
 
+  // Only for score page
+  const slug = window.location.pathname.split("/").splice(-1)[0];
+  let doesTodayScorePage = false;
+  if (slug === "today-score") {
+    doesTodayScorePage = true;
+  }
+  // style
+  const ScoreContainer = styled.div`
+    ${doesTodayScorePage ? "width: 100%" : null}
+  `;
+
   return (
-    <div className="score">
+    <ScoreContainer className="score">
       <h2>Score</h2>
       <h3>
-        <span>
-          {score.score ? score.score * 100 + "%" : score.todayScore * 100 + "%"}
-        </span>{" "}
-        de votre objectif
+        <span>{score ? score * 100 + "%" : null}</span> de votre objectif
       </h3>
       <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
@@ -45,7 +59,7 @@ const Score = (data) => {
           <RadialBar dataKey="uv" cornerRadius={10} />
         </RadialBarChart>
       </ResponsiveContainer>
-    </div>
+    </ScoreContainer>
   );
 };
 

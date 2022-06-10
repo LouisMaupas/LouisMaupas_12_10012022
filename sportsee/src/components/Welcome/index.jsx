@@ -3,9 +3,11 @@ import styled from "styled-components";
 const WelcomeContainer = styled.div`
   font-size: 2rem;
   font-weight: bold;
+  display: flex;
 `;
 const WelcomeName = styled.div`
   color: red;
+  margin-left: 1rem;
 `;
 
 /**
@@ -16,7 +18,7 @@ const WelcomeName = styled.div`
 export default function Welcome(userName) {
   return (
     <WelcomeContainer className="welcome">
-      Bonjour{" "}
+      Bonjour
       <WelcomeName className="welcome__name">{userName.userName}</WelcomeName>
     </WelcomeContainer>
   );

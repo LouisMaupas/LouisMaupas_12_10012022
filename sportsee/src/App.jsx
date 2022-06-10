@@ -26,9 +26,13 @@ const ContainerLabel = styled.div`
   min-height: 700px;
 `;
 
+/**
+ * App component : contents the web app
+ * @param {*} access
+ * @returns
+ */
 export default function App(access) {
   let [userId, setUserId] = useState();
-
   const userData = useContext(UserContext);
   let userActivity, userAccount, userAverageSessions, userPerformance;
   if (userData !== undefined) {
@@ -38,6 +42,9 @@ export default function App(access) {
     userPerformance = userData.userPerformance.data;
   }
 
+  /**
+   * Get access param and display view
+   */
   switch (access.access) {
     case "activity":
       return (
@@ -98,7 +105,7 @@ export default function App(access) {
     default:
       return (
         <UsersDataProvider id={userId}>
-          <Header state={{ id: [userId, setUserId] }} />
+          <Header />
           <div className="d-flex main-display">
             <SideMenu></SideMenu>
             <Home></Home>

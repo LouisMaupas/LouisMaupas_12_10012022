@@ -7,8 +7,8 @@ const CardLabel = styled.div`
   align-items: center;
   justify-content: space-around;
   background: #fbfbfb;
-  width: 195px;
-  height: 124px;
+  width: 175px;
+  height: 112px;
   border-radius: 5px;
   margin-bottom: 39px;
   padding: 0 0.75rem;
@@ -19,12 +19,10 @@ const CardLabel = styled.div`
   }
   > div .card__type {
     font-size: 14px;
-    color: #74798C;
-;
+    color: #74798c;
   }
 `;
 
-// Component
 /**
  * Generate Card component
  * @param {*} param0
@@ -34,7 +32,7 @@ function Card({ image, value, type }) {
   return (
     <CardLabel>
       <div>
-        <img src={image} alt="icon" />
+        <img src={image} alt="icon" height={50} width={50} />
       </div>
       <div>
         <div className="card__value">

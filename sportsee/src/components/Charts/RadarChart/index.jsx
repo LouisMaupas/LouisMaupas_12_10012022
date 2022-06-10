@@ -1,4 +1,5 @@
-import React, { PureComponent, useEffect, useState } from "react";
+import React, { PureComponent, useEffect, useState, useContext } from "react";
+import { UserContext } from "../../../utils/context/index";
 import {
   Radar,
   RadarChart,
@@ -9,11 +10,16 @@ import {
 } from "recharts";
 
 /**
- * RadarChart component using Recharts
+ * RadarChart component
  * @param {*} data
  * @returns
  */
-function Radarchart({ data }) {
+function Radarchart() {
+  const userData = useContext(UserContext);
+  let data;
+  if (userData && userData !== undefined) {
+    data = userData;
+  }
   let chartData = [];
   function formatPolarAxis(values) {
     const mappingkinds = {
@@ -24,12 +30,14 @@ function Radarchart({ data }) {
       5: "Vitesse",
       6: "Intensité",
     };
-    chartData = data.map((element) => {
-      return {
-        value: element.value,
-        kind: mappingkinds[element.kind],
-      };
-    });
+    if (userData.userPerformance.constructor === Object) {
+      chartData = data.userPerformance.data.map((element) => {
+        return {
+          value: element.value,
+          kind: mappingkinds[element.kind],
+        };
+      });
+    }
   }
 
   if (data !== undefined) {
