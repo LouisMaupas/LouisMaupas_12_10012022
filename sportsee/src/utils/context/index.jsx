@@ -18,6 +18,7 @@ function UsersDataProvider(props) {
   const [userAverageSessions, setUserAverageSessions] = useState([]);
   const [userPerformance, setUserPerformance] = useState([]);
   const [items, setItems] = useState([]);
+  const [isIdValid, setIsIdValid] = useState(true)
 
   /**
    * Call API with axios (https://github.com/axios/axios)
@@ -83,6 +84,7 @@ function UsersDataProvider(props) {
         if (error.response) {
           //response status is an error code
           console.log(error.response.status);
+          setIsIdValid(false) // user id doesn't exists
         } else if (error.request) {
           //response not received though the request was sent
           console.log(error.request);
@@ -99,6 +101,7 @@ function UsersDataProvider(props) {
         userActivity,
         userAverageSessions,
         userPerformance,
+        isIdValid,
       }}
     >
       {props.children}
