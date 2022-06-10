@@ -8,6 +8,9 @@ We recommend using Visual Studio code
 ## Installation
 
 Get backend at <a href="https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard">P9-front-end-dashboard </a>
+And follow the instructions.
+
+:arrow_down: Then follow instructions here to get and start frontend :arrow_down:
 
 ### `git clone https://github.com/LouisMaupas/LouisMaupas_12_10012022.git`
 
