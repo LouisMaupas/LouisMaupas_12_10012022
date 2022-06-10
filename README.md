@@ -7,7 +7,7 @@ We recommend using Visual Studio code
 
 ## Installation
 
-Get backend at [P9-front-end-dashboard]([https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard])
+Get backend at <a href="https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard">P9-front-end-dashboard </a>
 
 ### `git clone https://github.com/LouisMaupas/LouisMaupas_12_10012022.git`
 

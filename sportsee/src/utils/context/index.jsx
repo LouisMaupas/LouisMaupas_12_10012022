@@ -75,7 +75,7 @@ function UsersDataProvider(props) {
     ])
       .then(function (results) {
         setUserAccount(results[0].data.data);
-        setUserActivity(results[1].data.data);
+        setUserActivity(results[1].data.data); // set in state results
         setUserAverageSessions(results[2].data.data);
         setUserPerformance(results[3].data.data);
       })

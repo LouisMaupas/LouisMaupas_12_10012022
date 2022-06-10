@@ -27,7 +27,8 @@ import style from "./home.css";
 
 /**
  * Home page component
- * @returns
+ * @param1 {string} Nom
+ * @returns {HTMLElement} nom de l'user
  */
 function Home() {
   // Get user data
