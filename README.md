@@ -3,6 +3,11 @@
 ## Prerequisite
 
 Recommended Node version v16.13.2.\
+React 17.0.2 \
+React-router 6.2.1 \
+Recharts 2.1.8 \
+Styled-components 5.3.3
+
 We recommend using Visual Studio code
 
 ## Installation
@@ -12,9 +17,15 @@ And follow the instructions.
 
 :arrow_down: Then follow instructions here to get and start frontend :arrow_down:
 
-### `git clone https://github.com/LouisMaupas/LouisMaupas_12_10012022.git`
+### Clone the repo
+
+#### `git clone https://github.com/LouisMaupas/LouisMaupas_12_10012022.git`
 
 Clone the repo
+
+### `cd .\LouisMaupas_12_10012022\`
+
+Go to LouisMaupas_12_10012022 
 
 ### `npm install`
 
@@ -22,4 +33,5 @@ Install NPM packages
 
 ### `npm run start`
 
-Start project (don't forget to clone, install and start backend)
+Start frontend 
+
